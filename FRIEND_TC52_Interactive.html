@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>F.R.I.E.N.D. on Zebra TC-52</title>
+<style>
+:root{--blue:#0057b8;--red:#e31837;--yellow:#ffc72c;--dark:#061426;--panel:#0d2340;--white:#ffffff;--soft:#dbeafe;}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:radial-gradient(circle at top,#1b2a3a,#05070b 62%);color:var(--white);min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px;}
+.tc52{width:390px;height:820px;background:linear-gradient(145deg,#222,#050505);border-radius:36px;padding:18px 15px 22px;border:3px solid #555;box-shadow:0 25px 70px rgba(0,0,0,.75), inset 0 0 20px rgba(255,255,255,.06);position:relative;}
+.tc52:before{content:"";position:absolute;top:9px;left:50%;transform:translateX(-50%);width:82px;height:7px;border-radius:8px;background:#111;border:1px solid #444;box-shadow:0 0 8px #000 inset;}
+.scanner{height:28px;margin:2px auto 8px;width:255px;border-radius:12px;background:linear-gradient(180deg,#101010,#292929);border:1px solid #424242;display:flex;align-items:center;justify-content:center;color:#aaa;font-size:9px;letter-spacing:1.8px;text-transform:uppercase;}
+.screen-shell{height:710px;background:#000;border-radius:18px;padding:6px;border:2px solid #111;box-shadow:inset 0 0 18px rgba(0,0,0,.9);overflow:hidden;}
+.hardware-buttons{display:flex;justify-content:center;gap:16px;margin-top:13px}
+.hw{width:48px;height:12px;border-radius:12px;background:#111;border:1px solid #444;box-shadow:inset 0 1px 3px #555;}
+.app{width:100%;height:100%;margin:0;min-height:0;border:none;background:linear-gradient(180deg,#071b33,#061426);display:flex;flex-direction:column;overflow:hidden;}
+.header{padding:12px 11px;border-bottom:2px solid var(--blue);display:flex;align-items:center;justify-content:space-between;background:#071b33;position:relative;top:auto;z-index:2;flex:0 0 auto}
+.logo{font-weight:800;letter-spacing:1.2px;font-size:18px}.store{font-size:10px;color:var(--soft);text-align:right;line-height:1.25}.subtitle{font-size:8.5px;color:var(--yellow);letter-spacing:.45px;margin-top:2px}.content{padding:11px;overflow:auto;flex:1 1 auto;}
+.dropdown{margin-bottom:10px}.dropdown button{width:100%;padding:13px;border-radius:13px;border:1px solid #2b75c9;background:#0d2340;color:white;font-size:16px;text-align:left;display:flex;justify-content:space-between;align-items:center;box-shadow:0 0 18px rgba(0,87,184,.25);cursor:pointer;touch-action:manipulation}
+.menu{display:none;margin-top:7px;border-radius:14px;overflow:hidden;border:1px solid #2b75c9;max-height:285px;overflow-y:auto}.menu button{border-radius:0;border:none;border-bottom:1px solid rgba(255,255,255,.12);background:#102d52;font-size:15px;box-shadow:none}.menu button:hover,.menu button.active{background:#0057b8}
+.mission-card{border:1px solid #2b75c9;border-radius:20px;padding:13px;background:rgba(13,35,64,.92);box-shadow:0 0 28px rgba(0,87,184,.35);margin-top:8px}.priority-ring{width:138px;height:138px;border-radius:50%;border:8px solid var(--red);margin:9px auto;display:flex;align-items:center;justify-content:center;text-align:center;box-shadow:0 0 30px rgba(227,24,55,.55)}.priority-ring.yellow{border-color:var(--yellow);box-shadow:0 0 30px rgba(255,199,44,.45)}.priority-ring.blue{border-color:var(--blue);box-shadow:0 0 30px rgba(0,87,184,.65)}.priority-ring.white{border-color:var(--white);box-shadow:0 0 30px rgba(255,255,255,.35)}.label{font-size:10px;color:var(--yellow);text-transform:uppercase;letter-spacing:1px}.title{font-size:20px;font-weight:800;margin:7px 0}.metric-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0}.metric{background:#071b33;border:1px solid rgba(255,255,255,.15);border-radius:13px;padding:10px}.metric b{font-size:17px}.task{display:flex;gap:8px;background:#071b33;border-left:5px solid var(--yellow);padding:10px;border-radius:10px;margin:8px 0;align-items:flex-start;font-size:14px}.task.critical{border-left-color:var(--red)}.task.strategic{border-left-color:var(--blue)}.small{font-size:12px;color:#c7d8f5;line-height:1.35}.footer-tabs{position:relative;bottom:auto;display:grid;grid-template-columns:repeat(4,1fr);background:#061426;border-top:1px solid #2b75c9;flex:0 0 auto}.footer-tabs button{padding:12px 3px;background:transparent;color:white;border:none;font-size:11px;cursor:pointer;touch-action:manipulation}.footer-tabs button:hover{background:#0d2340}
+</style>
+</head>
+<body>
+<div class="tc52">
+  <div class="scanner">Zebra TC-52</div>
+  <div class="screen-shell">
+    <div class="app">
+  <div class="header">
+    <div><div class="logo">F.R.I.E.N.D.</div><div class="subtitle">Full Retail Integration Engaged Network Dynamics</div></div>
+    <div class="store">Store #129<br>King Soopers</div>
+  </div>
+  <div class="content">
+    <div class="dropdown">
+      <button onclick="toggleMenu()"><span id="selected">Composite</span><span>▾</span></button>
+      <div class="menu" id="menu">
+        <button onclick="selectScreen('Composite')">Composite</button>
+        <button onclick="selectScreen('Sales')">Sales</button>
+        <button onclick="selectScreen('Schedule')">Schedule</button>
+        <button onclick="selectScreen('Production')">Production</button>
+        <button onclick="selectScreen('Safety')">Safety</button>
+        <button onclick="selectScreen('Food Safety')">Food Safety</button>
+        <button onclick="selectScreen('Training')">Training</button>
+        <button onclick="selectScreen('Team Missions')">Team Missions</button>
+      </div>
+    </div>
+    <div class="mission-card" id="screen"></div>
+  </div>
+  <div class="footer-tabs">
+    <button onclick="selectScreen('Composite')">Dashboard</button>
+    <button onclick="selectScreen('Team Missions')">Missions</button>
+    <button onclick="selectScreen('Training')">Training</button>
+    <button onclick="selectScreen('Safety')">Safety</button>
+  </div>
+</div>
+
+  </div>
+  <div class="hardware-buttons"><div class="hw"></div><div class="hw"></div><div class="hw"></div></div>
+</div>
+<script>
+const screens={
+Composite:{priority:'Critical',color:'',title:'Guided Mission by Priority',subtitle:'AI detected highest-impact opportunity for today.',metrics:[['Deli Composite','82%'],['Risk Level','High'],['Labor Fit','91%'],['Shrink Trend','+0.4%']],tasks:[['critical','Verify production forecast before 10:00 AM'],['strategic','Reassign support during lunch peak'],['','Complete thaw-and-sell review']]},
+Sales:{priority:'Opportunity',color:'yellow',title:'Sales Recovery Mission',subtitle:'Prepared foods are trending below forecast.',metrics:[['Sales Gap','-$740'],['Forecast','94%'],['Peak Hour','12 PM'],['Basket Impact','Medium']],tasks:[['','Build fresh display before lunch'],['strategic','Coach suggestive selling at service counter']]},
+Schedule:{priority:'Strategic',color:'blue',title:'Labor Alignment Mission',subtitle:'Coverage is strong, but skills placement can improve.',metrics:[['Coverage','96%'],['Skill Fit','87%'],['Overtime Risk','Low'],['Callout Risk','Medium']],tasks:[['strategic','Move experienced associate to production 1 PM–4 PM'],['','Prepare backup plan for closing shift']]},
+Production:{priority:'Critical',color:'',title:'Production Control Mission',subtitle:'Production volume is exceeding demand curve.',metrics:[['Overproduction','+12%'],['Waste Risk','High'],['Markdowns','Due Soon'],['Forecast Match','78%']],tasks:[['critical','Reduce batch size on two slow-moving items'],['','Check par levels before next cook cycle']]},
+Safety:{priority:'Information',color:'white',title:'Safety Compliance Mission',subtitle:'No critical alerts; two opportunities found.',metrics:[['Incidents','0'],['Checks Due','2'],['Training','93%'],['Risk','Low']],tasks:[['','Complete floor inspection'],['strategic','Verify cut glove compliance']]},
+'Food Safety':{priority:'Critical',color:'',title:'Food Safety Mission',subtitle:'Temperature log is incomplete.',metrics:[['Missing Logs','1'],['Cooler Temp','Normal'],['Audit Risk','Medium'],['Training','88%']],tasks:[['critical','Complete temperature log immediately'],['','Review date labeling on prepared foods']]},
+Training:{priority:'Opportunity',color:'yellow',title:'Team Training Mission',subtitle:'One associate is ready for next skill certification.',metrics:[['Completed','86%'],['Due Soon','3'],['New Hire','1'],['Leader Review','Open']],tasks:[['strategic','Assign production basics module'],['','Recognize associate for completing food safety training']]},
+'Team Missions':{priority:'Strategic',color:'blue',title:'Today’s Team Missions',subtitle:'Touch each mission to assign, complete, or coach.',metrics:[['Open','7'],['Critical','2'],['Complete','11'],['Recognition','3']],tasks:[['critical','Close food safety log gap'],['strategic','Support lunch peak execution'],['','Prepare closing recovery plan']]}
+};
+function toggleMenu(){const m=document.getElementById('menu');m.style.display=m.style.display==='block'?'none':'block'}
+function selectScreen(name){document.getElementById('selected').innerText=name;document.getElementById('menu').style.display='none';render(name)}
+function render(name){const s=screens[name];document.getElementById('screen').innerHTML=`<div class="label">${s.priority} Priority</div><div class="priority-ring ${s.color}"><div><b>${s.priority}</b><br><span class="small">Mission Priority</span></div></div><div class="title">${s.title}</div><div class="small">${s.subtitle}</div><div class="metric-grid">${s.metrics.map(m=>`<div class="metric"><div class="small">${m[0]}</div><b>${m[1]}</b></div>`).join('')}</div><div class="label">Action Steps</div>${s.tasks.map(t=>`<div class="task ${t[0]}">☑ <div>${t[1]}</div></div>`).join('')}`}
+render('Composite')
+</script>
+</body>
+</html>
