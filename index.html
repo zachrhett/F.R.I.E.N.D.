@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>F.R.I.E.N.D. Proposal | King Soopers Division</title>
+
+  <style>
+    :root {
+      --blue: #0057b8;
+      --red: #d71920;
+      --yellow: #ffd200;
+      --white: #ffffff;
+      --dark: #102033;
+      --soft: #f4f7fb;
+      --gray: #5f6b7a;
+      --border: #d9e1ec;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--soft);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--blue), #003f88);
+      color: white;
+      padding: 32px 20px;
+      border-bottom: 8px solid var(--yellow);
+    }
+
+    .header-wrap {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin-bottom: 20px;
+    }
+
+    .logo-box {
+      background: white;
+      color: var(--red);
+      font-weight: 900;
+      padding: 14px 18px;
+      border-radius: 14px;
+      font-size: 1.1rem;
+      box-shadow: 0 8px 20px rgba(0,0,0,.18);
+    }
+
+    h1 {
+      font-size: clamp(2rem, 6vw, 4rem);
+      line-height: 1.05;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      font-size: 1.2rem;
+      max-width: 850px;
+      opacity: .95;
+    }
+
+    nav {
+      background: white;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .nav-wrap {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      padding: 12px 16px;
+    }
+
+    .nav-wrap a {
+      white-space: nowrap;
+      text-decoration: none;
+      color: var(--blue);
+      font-weight: 700;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: #eef5ff;
+    }
+
+    .nav-wrap a:hover {
+      background: var(--blue);
+      color: white;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: auto;
+      padding: 28px 16px 60px;
+    }
+
+    .dashboard {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      margin-bottom: 30px;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 22px;
+      box-shadow: 0 10px 25px rgba(16,32,51,.08);
+    }
+
+    .metric {
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: var(--blue);
+    }
+
+    .metric-label {
+      color: var(--gray);
+      font-weight: 700;
+      margin-top: 5px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+
+    .section {
+      background: white;
+      border-radius: 22px;
+      padding: 28px;
+      margin-bottom: 22px;
+      border-left: 8px solid var(--blue);
+      box-shadow: 0 10px 25px rgba(16,32,51,.08);
+    }
+
+    .section h2 {
+      font-size: 1.8rem;
+      margin-bottom: 12px;
+      color: var(--blue);
+    }
+
+    .tag {
+      display: inline-block;
+      background: var(--yellow);
+      color: var(--dark);
+      padding: 6px 12px;
+      font-weight: 800;
+      border-radius: 999px;
+      margin-bottom: 12px;
+    }
+
+    details {
+      background: #f8fbff;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      margin-top: 12px;
+      overflow: hidden;
+    }
+
+    summary {
+      cursor: pointer;
+      padding: 16px;
+      font-weight: 900;
+      color: var(--dark);
+    }
+
+    details p, details ul {
+      padding: 0 18px 18px;
+    }
+
+    ul {
+      margin-left: 20px;
+    }
+
+    .chart {
+      height: 220px;
+      display: flex;
+      align-items: end;
+      gap: 16px;
+      padding-top: 20px;
+    }
+
+    .bar {
+      flex: 1;
+      background: linear-gradient(180deg, var(--blue), #79aef2);
+      border-radius: 12px 12px 0 0;
+      position: relative;
+      min-height: 40px;
+    }
+
+    .bar span {
+      position: absolute;
+      bottom: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-weight: 700;
+      font-size: .85rem;
+    }
+
+    .callout {
+      background: linear-gradient(135deg, var(--red), #9f1118);
+      color: white;
+      border-radius: 22px;
+      padding: 28px;
+      margin-top: 26px;
+    }
+
+    .callout h2 {
+      margin-bottom: 10px;
+    }
+
+    footer {
+      background: var(--dark);
+      color: white;
+      padding: 28px 18px;
+      text-align: center;
+    }
+
+    @media (max-width: 900px) {
+      .dashboard,
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .dashboard {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .section {
+        padding: 22px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="header-wrap">
+      <div class="brand">
+        <div class="logo-box">King Soopers</div>
+        <div>
+          <strong>King Soopers Division</strong><br />
+          Executive Proposal Website
+        </div>
+      </div>
+
+      <h1>F.R.I.E.N.D. Proposal</h1>
+      <p class="subtitle">
+        Full Retail Integration Engaged Network Dynamics — an AI-assisted operational support system designed to improve execution, training, communication, shrink reduction, labor productivity, and leadership visibility across the division.
+      </p>
+    </div>
+  </header>
+
+  <nav>
+    <div class="nav-wrap">
+      <a href="#dashboard">Dashboard</a>
+      <a href="#prepilot">Pre-Pilot</a>
+      <a href="#cost">Pre-Pilot Cost</a>
+      <a href="#pilot">Pilot Program</a>
+      <a href="#regional">Regional Rollout</a>
+      <a href="#division">Division Rollout</a>
+      <a href="#roi">ROI</a>
+      <a href="#inaction">Inaction</a>
+      <a href="#redteam">Red Team</a>
+      <a href="#rollout">10 Point Rollout</a>
+    </div>
+  </nav>
+
+  <main>
+
+    <section id="dashboard" class="dashboard">
+      <div class="card">
+        <div class="metric">155</div>
+        <div class="metric-label">Stores Supported</div>
+      </div>
+
+      <div class="card">
+        <div class="metric">3</div>
+        <div class="metric-label">Pilot Stores</div>
+      </div>
+
+      <div class="card">
+        <div class="metric">3–6</div>
+        <div class="metric-label">Month Pilot</div>
+      </div>
+
+      <div class="card">
+        <div class="metric">95%+</div>
+        <div class="metric-label">Training Goal</div>
+      </div>
+    </section>
+
+    <section class="hero-grid">
+      <div class="section">
+        <span class="tag">Executive Summary</span>
+        <h2>Purpose of F.R.I.E.N.D.</h2>
+        <p>
+          F.R.I.E.N.D. is designed to act as a division-level operational intelligence layer. It supports store teams by centralizing task visibility, training guidance, production execution, food safety, shrink awareness, schedule alignment, and leadership follow-up.
+        </p>
+
+        <details open>
+          <summary>Primary Business Focus</summary>
+          <ul>
+            <li>Improve task execution consistency.</li>
+            <li>Reduce shrink through better visibility and accountability.</li>
+            <li>Support new associate training and onboarding.</li>
+            <li>Improve labor productivity through clearer direction.</li>
+            <li>Give store, district, and division leaders real-time operational insight.</li>
+          </ul>
+        </details>
+      </div>
+
+      <div class="section">
+        <span class="tag">Visual Model</span>
+        <h2>Projected Impact Areas</h2>
+
+        <div class="chart">
+          <div class="bar" style="height:70%;"><span>Labor</span></div>
+          <div class="bar" style="height:85%;"><span>Shrink</span></div>
+          <div class="bar" style="height:65%;"><span>Training</span></div>
+          <div class="bar" style="height:90%;"><span>Execution</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="prepilot" class="section">
+      <h2>1. Pre-Pilot</h2>
+      <p>
+        The pre-pilot phase prepares the division for a controlled test before broader investment.
+      </p>
+
+      <details>
+        <summary>Detailed Pre-Pilot Breakdown</summary>
+        <ul>
+          <li>Identify pilot stores: low-volume, medium-volume, and high-volume.</li>
+          <li>Map workflows by department.</li>
+          <li>Identify current execution gaps.</li>
+          <li>Build leadership dashboard requirements.</li>
+          <li>Establish success metrics before launch.</li>
+          <li>Prepare TC-52 or mobile-device workflow structure.</li>
+        </ul>
+      </details>
+    </section>
+
+    <section id="cost" class="section">
+      <h2>2. Pre-Pilot Cost</h2>
+      <p>
+        Initial costs may include planning, leadership alignment, technology preparation, training materials, workflow mapping, and technical setup.
+      </p>
+
+      <details>
+        <summary>Cost Categories</summary>
+        <ul>
+          <li>Device preparation and testing.</li>
+          <li>Software mockup and prototype development.</li>
+          <li>Training material creation.</li>
+          <li>Leadership alignment meetings.</li>
+          <li>Data collection process design.</li>
+          <li>Support labor for pilot launch.</li>
+        </ul>
+      </details>
+    </section>
+
+    <section id="pilot" class="section">
+      <h2>3. Pilot Program</h2>
+      <p>
+        The pilot should be tested across three stores: one low-volume, one medium-volume, and one high-volume location.
+      </p>
+
+      <details>
+        <summary>3–6 Month Pilot Structure</summary>
+        <ul>
+          <li>Month 1: Setup, training, baseline data collection.</li>
+          <li>Months 2–3: Active use and leadership feedback.</li>
+          <li>Months 4–5: Adjustments, department refinement, deeper adoption.</li>
+          <li>Month 6: Results review and rollout recommendation.</li>
+        </ul>
+      </details>
+    </section>
+
+    <section id="regional" class="section">
+      <h2>4. Regional Rollout</h2>
+      <p>
+        After pilot results are reviewed, F.R.I.E.N.D. can expand to 20–30 stores with regional leadership support.
+      </p>
+
+      <details>
+        <summary>Regional Scaling Plan</summary>
+        <ul>
+          <li>Deploy to selected stores based on operational readiness.</li>
+          <li>Train store leaders and department leaders.</li>
+          <li>Use pilot stores as reference models.</li>
+          <li>Track adoption, execution, shrink, and training completion.</li>
+        </ul>
+      </details>
+    </section>
+
+    <section id="division" class="section">
+      <h2>5. Division Rollout</h2>
+      <p>
+        A full division rollout would scale the program across all 155 King Soopers stores with structured training, support, and performance tracking.
+      </p>
+
+      <details>
+        <summary>Division Rollout Requirements</summary>
+        <ul>
+          <li>Standardized store launch playbook.</li>
+          <li>District-level support structure.</li>
+          <li>Division dashboard for operational visibility.</li>
+          <li>Training compliance tracking.</li>
+          <li>Ongoing feedback and refinement loop.</li>
+        </ul>
+      </details>
+    </section>
+
+    <section id="roi" class="section">
+      <h2>6. ROI</h2>
+      <p>
+        ROI should be measured through shrink reduction, labor productivity, training completion, execution consistency, and manager time savings.
+      </p>
+
+      <details>
+        <summary>ROI Measurement Areas</summary>
+        <ul>
+          <li>Reduced shrink from stronger task visibility.</li>
+          <li>Reduced missed production opportunities.</li>
+          <li>Improved labor deployment.</li>
+          <li>Faster new associate onboarding.</li>
+          <li>Improved compliance with food safety and operational standards.</li>
+        </ul>
+      </details>
+    </section>
+
+    <section id="inaction" class="section">
+      <h2>7. Cost of Inaction</h2>
+      <p>
+        Inaction may result in continued shrink, inconsistent training, missed sales opportunities, poor communication, unnecessary labor waste, and leadership blind spots.
+      </p>
+
+      <details>
+        <summary>Hidden Costs of Inaction</summary>
+        <ul>
+          <li>Lost productivity from unclear priorities.</li>
+          <li>Inconsistent execution across stores.</li>
+          <li>Training gaps for new associates.</li>
+          <li>Shrink caused by missed process controls.</li>
+          <li>Leadership time lost searching for operational clarity.</li>
+        </ul>
+      </details>
+    </section>
+
+    <section id="redteam" class="section">
+      <h2>8. Red Team</h2>
+      <p>
+        A responsible rollout must also examine possible negative impacts, adoption risks, training resistance, cost overruns, and implementation challenges.
+      </p>
+
+      <details>
+        <summary>Potential Risks</summary>
+        <ul>
+          <li>Store teams may resist another system if value is not clear.</li>
+          <li>Too many alerts could create fatigue.</li>
+          <li>Bad data could lead to poor decisions.</li>
+          <li>Training time may temporarily affect productivity.</li>
+          <li>Technology must support workers, not overwhelm them.</li>
+        </ul>
+      </details>
+    </section>
+
+    <section id="rollout" class="section">
+      <h2>9. 10 Point Rollout</h2>
+      <p>
+        The rollout should be structured, measurable, and adaptable.
+      </p>
+
+      <details open>
+        <summary>10 Point Rollout Plan</summary>
+        <ul>
+          <li>1. Define success metrics.</li>
+          <li>2. Select pilot stores.</li>
+          <li>3. Map department workflows.</li>
+          <li>4. Build prototype dashboard.</li>
+          <li>5. Train pilot leaders.</li>
+          <li>6. Launch 3-store pilot.</li>
+          <li>7. Collect data and feedback.</li>
+          <li>8. Adjust system design.</li>
+          <li>9. Expand to 20–30 stores.</li>
+          <li>10. Scale across the division.</li>
+        </ul>
+      </details>
+    </section>
+
+    <div class="callout">
+      <h2>Executive Closing Statement</h2>
+      <p>
+        The D2 Developers are proud to introduce F.R.I.E.N.D. — a practical, scalable, and people-centered operational intelligence system designed to help store teams succeed while giving leadership clearer visibility into execution across the King Soopers Division.
+      </p>
+      <br />
+      <p>
+        <strong>Contact:</strong><br />
+        Zachariah Rhett<br />
+        Zachariah.rhett@stores.kingsoopers.com<br />
+        (303) 729-4161
+      </p>
+    </div>
+
+  </main>
+
+  <footer>
+    F.R.I.E.N.D. Proposal | King Soopers Division | Prepared by Zachariah Rhett
+  </footer>
+
+</body>
+</html>
