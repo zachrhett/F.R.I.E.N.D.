@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>F.R.I.E.N.D. Proposal</title>
+<style>
+:root{
+  --blue:#0057a8;--red:#d71920;--yellow:#ffc220;--white:#fff;
+  --light:#f5f7fb;--dark:#1f2937;--gray:#64748b;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--light);color:var(--dark)}
+.wrapper{max-width:1400px;margin:auto;padding:22px}
+.hero{
+  background:linear-gradient(135deg,var(--blue),#003f7d);
+  color:white;border-radius:22px;padding:30px;
+  box-shadow:0 12px 30px rgba(0,0,0,.15);
+}
+.brand{
+  display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap
+}
+.logo{
+  background:white;color:var(--red);font-weight:900;font-size:1.7rem;
+  padding:16px 24px;border-radius:16px;border:5px solid var(--yellow)
+}
+.hero h1{font-size:3rem;margin:18px 0 4px;letter-spacing:3px}
+.hero h2{margin:0;font-size:1.2rem;font-weight:500}
+.hero p{font-weight:700;color:#eef6ff}
+.dashboard{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:14px;margin-top:24px
+}
+.kpi{
+  background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);
+  border-radius:16px;padding:18px
+}
+.kpi strong{display:block;font-size:1.8rem;color:var(--yellow)}
+.tabs{
+  display:flex;gap:8px;overflow-x:auto;margin:22px 0;padding-bottom:6px
+}
+.tabs button{
+  border:0;padding:13px 16px;border-radius:999px;background:white;color:var(--blue);
+  font-weight:800;cursor:pointer;white-space:nowrap;box-shadow:0 4px 12px rgba(0,0,0,.08)
+}
+.tabs button.active{background:var(--yellow);color:#111}
+.workspace{
+  background:white;border-radius:22px;padding:30px;min-height:600px;
+  box-shadow:0 12px 30px rgba(0,0,0,.1);border-top:8px solid var(--blue)
+}
+.section{display:none}
+.section.active{display:block}
+h2{color:var(--blue);margin-top:0}
+h3{color:#003f7d}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin:20px 0}
+.card{background:#f8fafc;border-left:6px solid var(--blue);border-radius:16px;padding:18px}
+.card.red{border-left-color:var(--red)}
+.card.yellow{border-left-color:var(--yellow)}
+.table{width:100%;border-collapse:collapse;margin:18px 0}
+.table th{background:var(--blue);color:white;text-align:left;padding:12px}
+.table td{border-bottom:1px solid #e5e7eb;padding:12px}
+.callout{background:#fff7d6;border-left:6px solid var(--yellow);padding:18px;border-radius:16px;margin:20px 0}
+.thankyou{text-align:center;max-width:850px;margin:auto;line-height:1.7}
+.quote{font-weight:900;color:var(--blue);margin-top:25px}
+</style>
+</head>
+
+<body>
+<div class="wrapper">
+
+  <header class="hero">
+    <div class="brand">
+      <div class="logo">King Soopers</div>
+      <div><strong>Division Proposal</strong></div>
+    </div>
+
+    <h1>F.R.I.E.N.D.</h1>
+    <h2>Full Retail Integration Engaged Network Dynamics</h2>
+    <p>Operational Intelligence • Leadership Development • Associate Success</p>
+
+    <div class="dashboard">
+      <div class="kpi"><strong>155</strong>Division Stores</div>
+      <div class="kpi"><strong>3</strong>Pilot Stores</div>
+      <div class="kpi"><strong>20-30</strong>Regional Rollout</div>
+      <div class="kpi"><strong>12</strong>Proposal Sections</div>
+      <div class="kpi"><strong>AI</strong>Guided Execution</div>
+      <div class="kpi"><strong>ROI</strong>Performance Focus</div>
+    </div>
+  </header>
+
+  <nav class="tabs">
+    <button class="active" onclick="showTab('executive',this)">Executive View</button>
+    <button onclick="showTab('prepilot',this)">1. Pre-Pilot</button>
+    <button onclick="showTab('cost',this)">2. Pre-Pilot Cost</button>
+    <button onclick="showTab('pilot',this)">3. Pilot Program</button>
+    <button onclick="showTab('regional',this)">4. Regional Rollout</button>
+    <button onclick="showTab('division',this)">5. Division Rollout</button>
+    <button onclick="showTab('roi',this)">6. ROI</button>
+    <button onclick="showTab('inaction',this)">7. Inaction</button>
+    <button onclick="showTab('redteam',this)">8. Red Team</button>
+    <button onclick="showTab('rollout',this)">9. 10-Point Rollout</button>
+    <button onclick="showTab('sources',this)">10. Sources</button>
+    <button onclick="showTab('charts',this)">11. Charts</button>
+    <button onclick="showTab('thanks',this)">12. Thank You</button>
+  </nav>
+
+  <main class="workspace">
+
+    <section id="executive" class="section active">
+      <h2>Executive View</h2>
+      <p>
+        F.R.I.E.N.D. is an AI-assisted operational intelligence and workforce development platform designed to support associate onboarding, leadership effectiveness, operational execution, and scalable division-wide performance across the King Soopers Division.
+      </p>
+      <div class="grid">
+        <div class="card"><h3>Associate Development</h3><p>Guided training, onboarding support, and role-specific learning pathways.</p></div>
+        <div class="card"><h3>Leadership Effectiveness</h3><p>Support for store leaders, assistant store leaders, department leaders, district leadership, and division leadership.</p></div>
+        <div class="card"><h3>Operational Excellence</h3><p>Improved daily execution, clearer priorities, and stronger accountability loops.</p></div>
+        <div class="card"><h3>Division Intelligence</h3><p>Scalable visibility into performance, training, shrink, labor, and rollout progress.</p></div>
+      </div>
+    </section>
+
+    <section id="prepilot" class="section">
+      <h2>1. Pre-Pilot</h2>
+      <p>The pre-pilot phase prepares the foundation before testing F.R.I.E.N.D. in live store environments.</p>
+      <table class="table">
+        <tr><th>Focus</th><th>Details</th></tr>
+        <tr><td>Current-State Review</td><td>Evaluate current training, task execution, leadership routines, shrink controls, and communication gaps.</td></tr>
+        <tr><td>Stakeholder Alignment</td><td>Align division leadership, district leadership, store leaders, department leaders, and support partners.</td></tr>
+        <tr><td>Success Metrics</td><td>Define measurable goals for adoption, execution, training completion, shrink reduction, and labor optimization.</td></tr>
+        <tr><td>Technology Readiness</td><td>Validate TC-52 workflows, dashboard needs, data access, support channels, and privacy expectations.</td></tr>
+      </table>
+    </section>
+
+    <section id="cost" class="section">
+      <h2>2. Pre-Pilot Cost</h2>
+      <div class="grid">
+        <div class="card"><h3>Platform Build</h3><p>Prototype refinement, workflow design, dashboard logic, and AI guidance structure.</p></div>
+        <div class="card"><h3>Hardware Review</h3><p>TC-52 readiness, device access, connectivity, and store-level testing.</p></div>
+        <div class="card"><h3>Training Materials</h3><p>Guides for store leaders, assistant store leaders, department leaders, and associates.</p></div>
+        <div class="card"><h3>Support Labor</h3><p>Project coordination, troubleshooting, pilot support, and leadership review sessions.</p></div>
+      </div>
+    </section>
+
+    <section id="pilot" class="section">
+      <h2>3. Pilot Program</h2>
+      <p>The pilot should test F.R.I.E.N.D. across three store environments: low, medium, and high volume.</p>
+      <table class="table">
+        <tr><th>Store Type</th><th>Purpose</th></tr>
+        <tr><td>Low Volume</td><td>Test usability, onboarding, and basic execution guidance.</td></tr>
+        <tr><td>Medium Volume</td><td>Validate consistency across departments and leadership routines.</td></tr>
+        <tr><td>High Volume</td><td>Stress-test real-time support, scalability, and exception handling.</td></tr>
+      </table>
+    </section>
+
+    <section id="regional" class="section">
+      <h2>4. Regional Rollout</h2>
+      <p>After pilot validation, district leadership can coordinate a 20-30 store rollout.</p>
+      <div class="grid">
+        <div class="card">District Leadership Coordination</div>
+        <div class="card">Store Leader Training</div>
+        <div class="card">Department Leader Adoption</div>
+        <div class="card">Weekly Performance Reviews</div>
+        <div class="card">Support Feedback Loop</div>
+        <div class="card">Regional KPI Dashboard</div>
+      </div>
+    </section>
+
+    <section id="division" class="section">
+      <h2>5. Division Rollout</h2>
+      <p>Division rollout expands the validated operating model across the King Soopers Division.</p>
+      <div class="callout">
+        Use division leadership language when discussing all King Soopers locations collectively.
+      </div>
+      <table class="table">
+        <tr><th>Phase</th><th>Focus</th></tr>
+        <tr><td>Phase 1</td><td>Finalize pilot learnings and adoption standards.</td></tr>
+        <tr><td>Phase 2</td><td>Expand through district leadership with structured implementation support.</td></tr>
+        <tr><td>Phase 3</td><td>Deploy across the division with executive dashboards and continuous improvement.</td></tr>
+      </table>
+    </section>
+
+    <section id="roi" class="section">
+      <h2>6. ROI</h2>
+      <div class="grid">
+        <div class="card"><h3>Shrink Reduction</h3><p>Improved markdown execution, replenishment discipline, and guided corrective action.</p></div>
+        <div class="card"><h3>Labor Optimization</h3><p>Better prioritization and reduced duplicated effort.</p></div>
+        <div class="card"><h3>Training Efficiency</h3><p>Faster onboarding and more consistent associate development.</p></div>
+        <div class="card"><h3>Leadership Effectiveness</h3><p>Improved visibility, coaching, accountability, and operating rhythm.</p></div>
+      </div>
+    </section>
+
+    <section id="inaction" class="section">
+      <h2>7. Cost of Inaction</h2>
+      <p>Inaction allows existing losses to continue through inconsistent execution, avoidable shrink, training gaps, and leadership bandwidth strain.</p>
+      <div class="grid">
+        <div class="card red">Training Gaps</div>
+        <div class="card red">Execution Variance</div>
+        <div class="card red">Preventable Shrink</div>
+        <div class="card red">Leadership Overload</div>
+        <div class="card red">Associate Frustration</div>
+        <div class="card red">Missed Intelligence</div>
+      </div>
+    </section>
+
+    <section id="redteam" class="section">
+      <h2>8. Red Team Analysis</h2>
+      <table class="table">
+        <tr><th>Risk</th><th>Mitigation</th></tr>
+        <tr><td>Low Adoption</td><td>Build with store leader and associate feedback before scaling.</td></tr>
+        <tr><td>Technology Friction</td><td>Test TC-52 usability during pilot.</td></tr>
+        <tr><td>Data Quality Issues</td><td>Validate source systems and ownership.</td></tr>
+        <tr><td>Change Fatigue</td><td>Position F.R.I.E.N.D. as support, not an added burden.</td></tr>
+      </table>
+    </section>
+
+    <section id="rollout" class="section">
+      <h2>9. 10-Point Rollout</h2>
+      <ol>
+        <li>Secure division leadership alignment.</li>
+        <li>Define pilot governance and success metrics.</li>
+        <li>Select low, medium, and high-volume pilot stores.</li>
+        <li>Finalize technology and TC-52 readiness.</li>
+        <li>Train store leaders and assistant store leaders.</li>
+        <li>Train department leaders and associates.</li>
+        <li>Collect daily and weekly pilot performance data.</li>
+        <li>Review pilot results with district leadership.</li>
+        <li>Expand through a 20-30 store regional rollout.</li>
+        <li>Scale across the King Soopers Division.</li>
+      </ol>
+    </section>
+
+    <section id="sources" class="section">
+      <h2>10. Sources & Analytics</h2>
+      <p>This section will house cited sources, assumptions, benchmark data, financial methodology, and internal calculation logic.</
