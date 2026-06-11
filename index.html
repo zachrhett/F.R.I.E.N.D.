@@ -1,0 +1,1401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>F.R.I.E.N.D. Proposal | King Soopers Division</title>
+
+<style>
+:root{
+  --blue:#0057b8;
+  --blue2:#003f87;
+  --red:#d71920;
+  --yellow:#ffc72c;
+  --white:#ffffff;
+  --ink:#142033;
+  --muted:#64748b;
+  --light:#f5f8fc;
+  --line:#dbe4f0;
+  --green:#16a34a;
+  --orange:#f97316;
+  --shadow:0 12px 30px rgba(15,23,42,.11);
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+
+html{scroll-behavior:smooth}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:var(--light);
+  color:var(--ink);
+  line-height:1.6;
+}
+
+header{
+  background:linear-gradient(135deg,var(--blue),var(--blue2));
+  color:white;
+  padding:32px 22px;
+  border-bottom:8px solid var(--yellow);
+}
+
+.wrap{
+  max-width:1380px;
+  margin:auto;
+}
+
+.brand{
+  display:flex;
+  gap:18px;
+  align-items:center;
+  margin-bottom:18px;
+}
+
+.logo{
+  width:78px;
+  height:78px;
+  border-radius:18px;
+  background:white;
+  color:var(--red);
+  border:5px solid var(--yellow);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  font-weight:900;
+  font-size:12px;
+  line-height:1.05;
+}
+
+h1{
+  font-size:clamp(32px,5vw,62px);
+  line-height:1;
+  margin-bottom:10px;
+}
+
+.subtitle{
+  max-width:1050px;
+  font-size:18px;
+  opacity:.95;
+}
+
+.badges{
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+  margin-top:18px;
+}
+
+.badge{
+  display:inline-flex;
+  padding:8px 13px;
+  border-radius:999px;
+  background:white;
+  color:var(--blue2);
+  font-weight:900;
+  font-size:13px;
+}
+
+.badge.red{background:var(--red);color:white}
+.badge.yellow{background:var(--yellow);color:#172033}
+
+nav{
+  position:sticky;
+  top:0;
+  z-index:99;
+  background:white;
+  border-bottom:1px solid var(--line);
+  box-shadow:0 4px 18px rgba(15,23,42,.08);
+}
+
+.nav{
+  max-width:1380px;
+  margin:auto;
+  display:flex;
+  gap:8px;
+  padding:12px;
+  overflow-x:auto;
+}
+
+.nav button{
+  border:0;
+  border-radius:999px;
+  background:var(--blue);
+  color:white;
+  font-weight:900;
+  padding:10px 14px;
+  white-space:nowrap;
+  cursor:pointer;
+}
+
+.nav button.active,
+.nav button:hover{
+  background:var(--red);
+}
+
+main{
+  max-width:1380px;
+  margin:auto;
+  padding:24px;
+}
+
+section{display:none}
+section.active{display:block;animation:fade .2s ease}
+
+@keyframes fade{
+  from{opacity:0;transform:translateY(8px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+.panel{
+  background:white;
+  border-radius:24px;
+  padding:30px;
+  margin-bottom:24px;
+  box-shadow:var(--shadow);
+  border-top:8px solid var(--blue);
+}
+
+.panel.red{border-top-color:var(--red)}
+.panel.yellow{border-top-color:var(--yellow)}
+.panel.green{border-top-color:var(--green)}
+
+.doc{
+  color:var(--red);
+  font-weight:900;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  font-size:13px;
+  margin-bottom:6px;
+}
+
+h2{
+  font-size:clamp(26px,3vw,40px);
+  color:var(--blue2);
+  margin-bottom:12px;
+  line-height:1.15;
+}
+
+h3{
+  color:var(--ink);
+  font-size:23px;
+  margin:24px 0 8px;
+}
+
+h4{
+  color:var(--blue2);
+  font-size:18px;
+  margin:16px 0 6px;
+}
+
+p{margin-bottom:12px}
+
+ul,ol{
+  margin:8px 0 16px 24px;
+}
+
+li{margin-bottom:7px}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(245px,1fr));
+  gap:16px;
+  margin:20px 0;
+}
+
+.card{
+  background:#fff;
+  border:1px solid var(--line);
+  border-left:6px solid var(--blue);
+  border-radius:18px;
+  padding:18px;
+  box-shadow:0 6px 18px rgba(15,23,42,.06);
+}
+
+.card.red{border-left-color:var(--red)}
+.card.yellow{border-left-color:var(--yellow)}
+.card.green{border-left-color:var(--green)}
+.card.orange{border-left-color:var(--orange)}
+
+.label{
+  font-size:12px;
+  color:var(--muted);
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:.05em;
+}
+
+.metric{
+  color:var(--blue);
+  font-size:34px;
+  font-weight:900;
+  line-height:1.05;
+  margin:6px 0;
+}
+
+.metric.red{color:var(--red)}
+.metric.green{color:var(--green)}
+.metric.yellow{color:#946200}
+.metric.orange{color:var(--orange)}
+
+.callout{
+  border-radius:18px;
+  padding:18px;
+  margin:18px 0;
+  background:#eef6ff;
+  border-left:8px solid var(--blue);
+}
+
+.callout.red{background:#fff1f2;border-left-color:var(--red)}
+.callout.yellow{background:#fff7db;border-left-color:var(--yellow)}
+.callout.green{background:#ecfdf5;border-left-color:var(--green)}
+
+details{
+  background:#fbfdff;
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:16px;
+  margin:12px 0;
+}
+
+summary{
+  color:var(--blue2);
+  font-weight:900;
+  cursor:pointer;
+}
+
+.table-wrap{
+  overflow-x:auto;
+  margin:18px 0;
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+  background:white;
+  border:1px solid var(--line);
+  border-radius:14px;
+  overflow:hidden;
+}
+
+th{
+  background:var(--blue);
+  color:white;
+  padding:12px;
+  text-align:left;
+  font-size:13px;
+}
+
+td{
+  border-top:1px solid var(--line);
+  padding:12px;
+  vertical-align:top;
+}
+
+tr:nth-child(even) td{background:#f8fbff}
+
+.chart{
+  background:white;
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:18px;
+  margin:20px 0;
+}
+
+.chart-title{
+  font-weight:900;
+  color:var(--blue2);
+  margin-bottom:4px;
+}
+
+.chart-note{
+  color:var(--muted);
+  font-size:13px;
+  margin-bottom:14px;
+}
+
+.bars{
+  display:flex;
+  align-items:flex-end;
+  gap:14px;
+  height:260px;
+  padding:18px 8px 42px;
+  border-left:2px solid var(--line);
+  border-bottom:2px solid var(--line);
+}
+
+.bar{
+  flex:1;
+  min-width:38px;
+  background:var(--blue);
+  color:white;
+  border-radius:10px 10px 0 0;
+  display:flex;
+  align-items:flex-start;
+  justify-content:center;
+  padding-top:7px;
+  position:relative;
+  font-weight:900;
+  font-size:12px;
+  text-align:center;
+}
+
+.bar.red{background:var(--red)}
+.bar.yellow{background:var(--yellow);color:#172033}
+.bar.green{background:var(--green)}
+.bar.orange{background:var(--orange)}
+
+.bar span{
+  position:absolute;
+  bottom:-34px;
+  left:50%;
+  transform:translateX(-50%);
+  color:var(--muted);
+  font-size:11px;
+  font-weight:900;
+  white-space:nowrap;
+}
+
+.timeline{
+  display:grid;
+  gap:14px;
+  margin:20px 0;
+}
+
+.step{
+  display:grid;
+  grid-template-columns:70px 1fr;
+  gap:14px;
+  background:#fbfdff;
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:16px;
+}
+
+.step-num{
+  width:52px;
+  height:52px;
+  border-radius:50%;
+  background:var(--blue);
+  color:white;
+  font-weight:900;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.step:nth-child(3n) .step-num{background:var(--red)}
+.step:nth-child(4n) .step-num{background:var(--yellow);color:#172033}
+.step:nth-child(5n) .step-num{background:var(--green)}
+
+.source a{
+  color:var(--blue2);
+  font-weight:900;
+  word-break:break-word;
+}
+
+footer{
+  text-align:center;
+  padding:28px;
+  color:var(--muted);
+}
+
+@media(max-width:720px){
+  main{padding:14px}
+  .panel{padding:20px}
+  .brand{align-items:flex-start}
+  .logo{width:62px;height:62px;font-size:10px}
+  .bars{gap:7px}
+  .bar{font-size:10px}
+  .step{grid-template-columns:1fr}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="brand">
+      <div class="logo">KING<br>SOOPERS</div>
+      <div>
+        <h1>F.R.I.E.N.D. Proposal</h1>
+        <p class="subtitle">
+          Full Retail Integration Engaged Network Dynamics — a King Soopers Division proposal for retail intelligence,
+          operational execution, training integration, leadership development, shrink reduction, and scalable decision support.
+        </p>
+      </div>
+    </div>
+
+    <div class="badges">
+      <span class="badge yellow">Kroger = Enterprise</span>
+      <span class="badge">King Soopers = Division</span>
+      <span class="badge red">Executive Thesis Portal</span>
+      <span class="badge">High-Level View + Detailed Analysis</span>
+      <span class="badge">Pilot • ROI • Rollout • Risk • Red Team</span>
+    </div>
+  </div>
+</header>
+
+<nav>
+  <div class="nav">
+    <button class="active" onclick="showSection('dashboard',this)">Dashboard</button>
+    <button onclick="showSection('thesis',this)">Thesis</button>
+    <button onclick="showSection('inaction',this)">Cost of Inaction</button>
+    <button onclick="showSection('current',this)">Current State</button>
+    <button onclick="showSection('prepilot',this)">Pre-Pilot Cost</button>
+    <button onclick="showSection('pilot',this)">Pilot Program</button>
+    <button onclick="showSection('roi',this)">ROI Breakdown</button>
+    <button onclick="showSection('rollout10',this)">10-Point Rollout</button>
+    <button onclick="showSection('division',this)">Division Rollout</button>
+    <button onclick="showSection('impact',this)">Company Impact</button>
+    <button onclick="showSection('redteam',this)">Red Team</button>
+    <button onclick="showSection('governance',this)">Governance</button>
+    <button onclick="showSection('sources',this)">Sources</button>
+  </div>
+</nav>
+
+<main>
+
+<section id="dashboard" class="active">
+  <div class="panel">
+    <div class="doc">Executive dashboard</div>
+    <h2>High-Level Proposal View</h2>
+
+    <p>
+      F.R.I.E.N.D. is proposed as a division-level intelligence and execution platform for King Soopers.
+      It is designed to translate fragmented retail information into guided daily action, leadership coaching,
+      measurable operating discipline, and scalable financial improvement.
+    </p>
+
+    <div class="grid">
+      <div class="card green">
+        <div class="label">Modeled conservative annual opportunity</div>
+        <div class="metric green">$48.8M</div>
+        <p>Modeled across 155 stores from shrink reduction, sales execution, labor clarity, training effectiveness, and decision speed.</p>
+      </div>
+
+      <div class="card red">
+        <div class="label">Modeled annual cost of inaction</div>
+        <div class="metric red">$31M</div>
+        <p>Estimated avoidable operational drag if fragmented execution, markdown gaps, training friction, and delayed decisions continue.</p>
+      </div>
+
+      <div class="card yellow">
+        <div class="label">Pre-pilot creation range</div>
+        <div class="metric yellow">$45K–$150K</div>
+        <p>Executive prototype, data model, thesis portal, process maps, mock dashboards, pilot charter, and validation design.</p>
+      </div>
+
+      <div class="card">
+        <div class="label">Controlled pilot range</div>
+        <div class="metric">$250K–$750K</div>
+        <p>Three-store pilot across low, medium, and high-volume environments with validated metrics and governance.</p>
+      </div>
+    </div>
+
+    <div class="chart">
+      <div class="chart-title">Executive value model by opportunity driver</div>
+      <div class="chart-note">Illustrative modeled annual value across 155 stores. Final values require internal validation.</div>
+      <div class="bars">
+        <div class="bar green" style="height:90%">$18M<span>Shrink</span></div>
+        <div class="bar" style="height:75%">$15M<span>Sales</span></div>
+        <div class="bar yellow" style="height:50%">$10M<span>Labor</span></div>
+        <div class="bar red" style="height:25%">$5M<span>Training</span></div>
+        <div class="bar orange" style="height:19%">$3.8M<span>Decision</span></div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <strong>Executive framing:</strong> The proposal should not ask leadership to approve a full enterprise transformation.
+      It should ask for a professionally governed King Soopers Division pre-pilot and pilot that can prove or disprove the model with disciplined measurement.
+    </div>
+  </div>
+</section>
+
+<section id="thesis">
+  <div class="panel">
+    <div class="doc">College-style thesis overview</div>
+    <h2>F.R.I.E.N.D. Thesis Statement</h2>
+
+    <p>
+      Modern grocery retail is no longer limited by effort alone. It is limited by the speed at which leaders can interpret
+      complex information, align people around the correct priorities, and convert operational data into timely action.
+      F.R.I.E.N.D. proposes that King Soopers can improve execution, reduce avoidable loss, develop leaders, and strengthen
+      associate capability by creating a unified intelligence layer between existing systems and daily store operations.
+    </p>
+
+    <h3>Central Claim</h3>
+    <p>
+      If operational data, department routines, training expectations, and leadership coaching are unified into one guided
+      operating model, then King Soopers can reduce execution variation, improve decision speed, and create measurable value
+      before any Kroger enterprise-scale commitment is required.
+    </p>
+
+    <h3>Research Logic</h3>
+    <ol>
+      <li>Retail shrink, execution loss, labor inefficiency, and training inconsistency create recurring hidden costs.</li>
+      <li>These costs are difficult to detect because they are distributed across stores, departments, systems, and routines.</li>
+      <li>A dashboard alone is insufficient because information does not guarantee behavior change.</li>
+      <li>A guided operating system is stronger because it converts data into prioritized daily missions, coaching prompts, and measurable routines.</li>
+      <li>A controlled pilot is the correct next step because it limits risk while creating evidence.</li>
+    </ol>
+
+    <h3>What F.R.I.E.N.D. Is</h3>
+    <div class="grid">
+      <div class="card">
+        <h4>Retail Intelligence Layer</h4>
+        <p>Aggregates operational signals into meaningful priorities for store, district, and division leadership.</p>
+      </div>
+      <div class="card green">
+        <h4>Execution Engine</h4>
+        <p>Turns performance gaps into daily actions, department tasks, and measurable completion standards.</p>
+      </div>
+      <div class="card yellow">
+        <h4>Training Integration System</h4>
+        <p>Connects learning to live operational moments so training becomes applied competence, not detached completion.</p>
+      </div>
+      <div class="card red">
+        <h4>Leadership Development Platform</h4>
+        <p>Gives leaders coaching prompts, role clarity, risk visibility, and a shared language for performance improvement.</p>
+      </div>
+    </div>
+
+    <h3>What F.R.I.E.N.D. Is Not</h3>
+    <ul>
+      <li>It is not a replacement for leaders.</li>
+      <li>It is not a surveillance tool.</li>
+      <li>It is not an immediate enterprise-wide technology demand.</li>
+      <li>It is not a claim that modeled estimates are guaranteed savings.</li>
+      <li>It is not a generic dashboard without behavior-change structure.</li>
+    </ul>
+
+    <div class="callout yellow">
+      <strong>Thesis discipline:</strong> Every financial number in this proposal should be treated as a planning model until validated against internal Kroger and King Soopers data.
+    </div>
+  </div>
+</section>
+
+<section id="inaction">
+  <div class="panel red">
+    <div class="doc">Cost of inaction document</div>
+    <h2>Cost of Inaction Analysis</h2>
+
+    <p>
+      The cost of inaction is the annual value that may continue to leak from the business if fragmented operating systems,
+      missed markdowns, preventable shrink, delayed training, inconsistent department execution, and slow decision-making remain unchanged.
+    </p>
+
+    <h3>Why Inaction Has a Cost</h3>
+    <p>
+      In grocery retail, small losses compound quickly because operations repeat every day across many stores. A single missed
+      markdown window, one delayed replenishment decision, one unclear department priority, or one associate training gap may
+      seem small at store level. Across 155 stores, those small failures become material.
+    </p>
+
+    <div class="grid">
+      <div class="card red">
+        <div class="label">Shrink and markdown exposure</div>
+        <div class="metric red">$7.75M</div>
+        <p>Modeled annual exposure from missed markdowns, freshness loss, poor rotation, and preventable product waste.</p>
+      </div>
+      <div class="card yellow">
+        <div class="label">Labor friction</div>
+        <div class="metric yellow">$7.75M</div>
+        <p>Modeled annual exposure from unclear priorities, rework, inefficient task sequencing, and slow daily alignment.</p>
+      </div>
+      <div class="card">
+        <div class="label">Training inefficiency</div>
+        <div class="metric">$2.19M</div>
+        <p>Modeled annual exposure from slow ramp-up, repeated coaching, inconsistent onboarding, and weak applied training.</p>
+      </div>
+      <div class="card orange">
+        <div class="label">Decision delay and execution loss</div>
+        <div class="metric orange">$13.31M</div>
+        <p>Modeled annual exposure from delayed action, weak prioritization, missed sales floor readiness, and inconsistent follow-through.</p>
+      </div>
+    </div>
+
+    <div class="chart">
+      <div class="chart-title">Modeled annual cost of inaction</div>
+      <div class="chart-note">Conservative planning model. Replace with validated internal finance data before formal submission.</div>
+      <div class="bars">
+        <div class="bar red" style="height:58%">$7.75M<span>Shrink</span></div>
+        <div class="bar yellow" style="height:58%">$7.75M<span>Labor</span></div>
+        <div class="bar" style="height:17%">$2.19M<span>Training</span></div>
+        <div class="bar orange" style="height:100%">$13.31M<span>Delay</span></div>
+      </div>
+    </div>
+
+    <h3>Markdown-Specific Inaction</h3>
+    <p>
+      A major missed opportunity discussed in the model is markdown effectiveness. Many stores may appear to have poor markdown
+      effectiveness because reporting can average eligible and non-eligible categories together. If non-markdown categories are
+      counted as zero, the performance average becomes distorted and leaders may pursue the wrong corrective action.
+    </p>
+
+    <div class="callout red">
+      <strong>Required correction:</strong> Markdown effectiveness should be calculated only against eligible markdown categories.
+      Non-eligible categories should be excluded, not counted as zero.
+    </div>
+
+    <h3>Inaction Conclusion</h3>
+    <p>
+      The cost of inaction is not merely financial. It includes slower leadership development, inconsistent associate confidence,
+      weaker daily clarity, preventable operational stress, and reduced ability to scale best practices across the division.
+    </p>
+  </div>
+</section>
+
+<section id="current">
+  <div class="panel">
+    <div class="doc">Current state assessment</div>
+    <h2>Current State: Fragmentation, Friction, and Lost Execution</h2>
+
+    <p>
+      Current retail execution depends on leaders interpreting multiple information streams while managing people, product,
+      customers, compliance, labor, training, and daily disruption. The issue is not lack of effort. The issue is lack of a
+      unified system that converts complexity into clear action.
+    </p>
+
+    <h3>Current-State Problems</h3>
+    <div class="grid">
+      <div class="card red">
+        <h4>Fragmented Systems</h4>
+        <p>Operational data may exist across separate tools, reports, dashboards, emails, tasks, and leader routines.</p>
+      </div>
+      <div class="card yellow">
+        <h4>Training Detached from Work</h4>
+        <p>Training completion does not always equal operational competence at the moment the associate needs guidance.</p>
+      </div>
+      <div class="card orange">
+        <h4>Delayed Decisions</h4>
+        <p>Information may arrive after the window for markdowns, replenishment, production, or service recovery has passed.</p>
+      </div>
+      <div class="card">
+        <h4>Inconsistent Leadership Rhythm</h4>
+        <p>Different stores and departments may interpret priorities differently, creating execution variation.</p>
+      </div>
+    </div>
+
+    <h3>Operational Friction Index</h3>
+    <div class="chart">
+      <div class="chart-title">Current friction by category</div>
+      <div class="chart-note">Illustrative scoring model where higher score means more operating friction.</div>
+      <div class="bars">
+        <div class="bar red" style="height:92%">92<span>Data</span></div>
+        <div class="bar red" style="height:88%">88<span>Shrink</span></div>
+        <div class="bar yellow" style="height:78%">78<span>Training</span></div>
+        <div class="bar yellow" style="height:74%">74<span>Labor</span></div>
+        <div class="bar" style="height:69%">69<span>Digital</span></div>
+        <div class="bar orange" style="height:82%">82<span>Execution</span></div>
+      </div>
+    </div>
+
+    <h3>Current-State Thesis</h3>
+    <p>
+      The business does not simply need more reporting. It needs a structured decision layer that explains which problem matters,
+      why it matters, who owns it, what action should happen, and how the result will be measured.
+    </p>
+  </div>
+</section>
+
+<section id="prepilot">
+  <div class="panel yellow">
+    <div class="doc">Initial cost to create pre-pilot program</div>
+    <h2>Pre-Pilot Program: What It Takes to Create F.R.I.E.N.D.</h2>
+
+    <p>
+      The pre-pilot is the professional creation phase before live store testing. Its purpose is to build the executive case,
+      create a working prototype, define measurement logic, validate data requirements, prepare governance, and design the pilot
+      so the organization does not enter testing unprepared.
+    </p>
+
+    <h3>Pre-Pilot Scope</h3>
+    <ol>
+      <li>Executive proposal portal and thesis documentation.</li>
+      <li>Financial model with assumptions, risk ranges, and sensitivity analysis.</li>
+      <li>Current-state workflow mapping by department and leadership level.</li>
+      <li>Data-source inventory and integration feasibility review.</li>
+      <li>Mock dashboards for division, district, store, department, and associate views.</li>
+      <li>Mission engine rules for shrink, markdowns, labor, food safety, training, and service.</li>
+      <li>Pilot charter with success metrics, scope, roles, and timeline.</li>
+      <li>Red team review and ethics review.</li>
+      <li>Stakeholder communication package.</li>
+      <li>Executive readout and go/no-go decision gate.</li>
+    </ol>
+
+    <h3>Pre-Pilot Cost Estimate</h3>
+    <div class="table-wrap">
+      <table>
+        <tr>
+          <th>Workstream</th>
+          <th>Low Estimate</th>
+          <th>High Estimate</th>
+          <th>Purpose</th>
+        </tr>
+        <tr>
+          <td>Proposal architecture and thesis documentation</td>
+          <td>$8,000</td>
+          <td>$20,000</td>
+          <td>Executive-ready written case, analysis structure, and documentation library.</td>
+        </tr>
+        <tr>
+          <td>Prototype dashboard and portal build</td>
+          <td>$12,000</td>
+          <td>$35,000</td>
+          <td>Clickable executive prototype, charts, navigation, and sample data views.</td>
+        </tr>
+        <tr>
+          <td>Financial modeling and sensitivity analysis</td>
+          <td>$7,500</td>
+          <td>$25,000</td>
+          <td>ROI, cost of inaction, pilot cost, rollout cost, and scenario modeling.</td>
+        </tr>
+        <tr>
+          <td>Data and systems feasibility review</td>
+          <td>$10,000</td>
+          <td>$30,000</td>
+          <td>Identify required data sources, access needs, refresh logic, and integration complexity.</td>
+        </tr>
+        <tr>
+          <td>Pilot design and governance package</td>
+          <td>$7,500</td>
+          <td>$25,000</td>
+          <td>Pilot charter, measurement gates, ownership model, risk controls, and reporting cadence.</td>
+        </tr>
+        <tr>
+          <td>Red team, ethics, and stakeholder review</td>
+          <td>$5,000</td>
+          <td>$15,000</td>
+          <td>Challenge assumptions, identify risks, and prepare executive objections.</td>
+        </tr>
+        <tr>
+          <th>Total</th>
+          <th>$50,000</th>
+          <th>$150,000</th>
+          <th>Professional pre-pilot creation range.</th>
+        </tr>
+      </table>
+    </div>
+
+    <div class="chart">
+      <div class="chart-title">Pre-pilot cost by workstream</div>
+      <div class="chart-note">High-range planning estimate.</div>
+      <div class="bars">
+        <div class="bar" style="height:57%">$20K<span>Thesis</span></div>
+        <div class="bar green" style="height:100%">$35K<span>Prototype</span></div>
+        <div class="bar yellow" style="height:71%">$25K<span>Finance</span></div>
+        <div class="bar red" style="height:86%">$30K<span>Data</span></div>
+        <div class="bar orange" style="height:71%">$25K<span>Pilot</span></div>
+        <div class="bar" style="height:43%">$15K<span>Red Team</span></div>
+      </div>
+    </div>
+
+    <div class="callout yellow">
+      <strong>Recommended ask:</strong> Request approval for a pre-pilot creation budget before asking for live operational testing.
+      This makes the proposal more disciplined, credible, and executive-ready.
+    </div>
+  </div>
+</section>
+
+<section id="pilot">
+  <div class="panel green">
+    <div class="doc">Detailed pilot program</div>
+    <h2>Three-Store Pilot Program</h2>
+
+    <p>
+      The pilot should test F.R.I.E.N.D. in three operating environments: low-volume, medium-volume, and high-volume stores.
+      This allows the division to evaluate whether the model works under different complexity, labor, customer, and execution conditions.
+    </p>
+
+    <h3>Pilot Objectives</h3>
+    <ul>
+      <li>Determine whether the platform changes leader and associate behavior.</li>
+      <li>Measure whether guided missions improve markdowns, shrink, task completion, training, and decision speed.</li>
+      <li>Validate which data sources are reliable enough for daily use.</li>
+      <li>Identify friction before division rollout.</li>
+      <li>Build executive evidence for go/no-go expansion.</li>
+    </ul>
+
+    <h3>Pilot Store Design</h3>
+    <div class="grid">
+      <div class="card">
+        <h4>Low-Volume Store</h4>
+        <p>Tests simplicity, staffing flexibility, adoption burden, and whether F.R.I.E.N.D. helps stores with fewer available resources.</p>
+      </div>
+      <div class="card yellow">
+        <h4>Medium-Volume Store</h4>
+        <p>Tests the balanced operating model and establishes a likely representative baseline for division scaling.</p>
+      </div>
+      <div class="card red">
+        <h4>High-Volume Store</h4>
+        <p>Tests pressure, speed, workload complexity, department intensity, and executive scalability under demanding conditions.</p>
+      </div>
+    </div>
+
+    <h3>Pilot Timeline</h3>
+    <div class="timeline">
+      <div class="step"><div class="step-num">1</div><div><h4>Baseline Measurement</h4><p>Collect 8–12 weeks of baseline data for shrink, markdowns, labor, sales, task completion, food safety, and training.</p></div></div>
+      <div class="step"><div class="step-num">2</div><div><h4>Leader Setup</h4><p>Train store leaders, assistant leaders, and department leaders on dashboards, missions, escalation, and feedback loops.</p></div></div>
+      <div class="step"><div class="step-num">3</div><div><h4>Department Configuration</h4><p>Configure department-specific priorities for Meat, Deli, Produce, Grocery, E-Commerce, Front End, and other key operating areas.</p></div></div>
+      <div class="step"><div class="step-num">4</div><div><h4>Soft Launch</h4><p>Run F.R.I.E.N.D. alongside current routines for 2 weeks without using results for performance evaluation.</p></div></div>
+      <div class="step"><div class="step-num">5</div><div><h4>Live Pilot</h4><p>Operate for 12–16 weeks with weekly review, correction, and adoption tracking.</p></div></div>
+      <div class="step"><div class="step-num">6</div><div><h4>Executive Review</h4><p>Compare results to baseline and determine whether the pilot should expand, revise, pause, or stop.</p></div></div>
+    </div>
+
+    <h3>Pilot Cost Estimate</h3>
+    <div class="table-wrap">
+      <table>
+        <tr>
+          <th>Category</th>
+          <th>Low</th>
+          <th>High</th>
+          <th>Notes</th>
+        </tr>
+        <tr>
+          <td>Product build and configuration</td>
+          <td>$90K</td>
+          <td>$250K</td>
+          <td>Dashboards, mission logic, role views, data model, user testing.</td>
+        </tr>
+        <tr>
+          <td>Data integration and security review</td>
+          <td>$60K</td>
+          <td>$180K</td>
+          <td>Access, refresh cadence, identity, privacy, system controls.</td>
+        </tr>
+        <tr>
+          <td>Training and change management</td>
+          <td>$35K</td>
+          <td>$100K</td>
+          <td>Leader training, associate communication, support materials.</td>
+        </tr>
+        <tr>
+          <td>Analytics and measurement</td>
+          <td>$40K</td>
+          <td>$120K</td>
+          <td>Baseline, pilot tracking, ROI review, executive reporting.</td>
+        </tr>
+        <tr>
+          <td>Support and contingency</td>
+          <td>$25K</td>
+          <td>$100K</td>
+          <td>Bug fixes, iteration, field support, unplanned complexity.</td>
+        </tr>
+        <tr>
+          <th>Total</th>
+          <th>$250K</th>
+          <th>$750K</th>
+          <th>Three-store controlled pilot range.</th>
+        </tr>
+      </table>
+    </div>
+
+    <div class="callout green">
+      <strong>Pilot success standard:</strong> The pilot should not be judged only by financial results.
+      It should be judged by adoption, behavior change, data trust, leader usefulness, associate clarity, and measurable operating lift.
+    </div>
+  </div>
+</section>
+
+<section id="roi">
+  <div class="panel green">
+    <div class="doc">Detailed ROI breakdown</div>
+    <h2>ROI Breakdown and Estimate Model</h2>
+
+    <p>
+      The ROI model should be presented in three scenarios: conservative, moderate, and aggressive.
+      This allows executives, analysts, and financial reviewers to challenge assumptions without dismissing the entire proposal.
+    </p>
+
+    <h3>Annual Opportunity Scenarios</h3>
+    <div class="table-wrap">
+      <table>
+        <tr>
+          <th>Scenario</th>
+          <th>Annual Value</th>
+          <th>Operating Assumption</th>
+          <th>Interpretation</th>
+        </tr>
+        <tr>
+          <td>Conservative</td>
+          <td>$48.8M</td>
+          <td>Small measurable gains across multiple operating categories.</td>
+          <td>Appropriate for executive planning and early validation.</td>
+        </tr>
+        <tr>
+          <td>Moderate</td>
+          <td>$95.9M</td>
+          <td>Higher adoption, more consistent execution, improved leadership routines.</td>
+          <td>Possible after successful pilot and controlled district expansion.</td>
+        </tr>
+        <tr>
+          <td>Aggressive</td>
+          <td>$143M+</td>
+          <td>Strong division adoption and measurable improvement across most categories.</td>
+          <td>Not recommended as the primary pitch; useful as upside case.</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="chart">
+      <div class="chart-title">ROI scenario model</div>
+      <div class="chart-note">Annual modeled value across 155 stores.</div>
+      <div class="bars">
+        <div class="bar green" style="height:34%">$48.8M<span>Conservative</span></div>
+        <div class="bar" style="height:67%">$95.9M<span>Moderate</span></div>
+        <div class="bar red" style="height:100%">$143M<span>Aggressive</span></div>
+      </div>
+    </div>
+
+    <h3>Detailed ROI Drivers</h3>
+    <div class="table-wrap">
+      <table>
+        <tr>
+          <th>Driver</th>
+          <th>Value Logic</th>
+          <th>Measurement</th>
+        </tr>
+        <tr>
+          <td>Shrink Reduction</td>
+          <td>Earlier markdowns, better rotation, freshness discipline, fewer preventable losses.</td>
+          <td>Shrink rate, markdown completion, waste, freshness score.</td>
+        </tr>
+        <tr>
+          <td>Sales Lift</td>
+          <td>Better replenishment, sales floor readiness, fewer out-of-stocks, improved service execution.</td>
+          <td>Sales comp, fill rate, out-of-stock reduction, department readiness.</td>
+        </tr>
+        <tr>
+          <td>Labor Efficiency</td>
+          <td>Clearer priorities, less rework, better task sequencing, stronger leader routines.</td>
+          <td>Task completion, labor variance, overtime, productivity measures.</td>
+        </tr>
+        <tr>
+          <td>Training Effectiveness</td>
+          <td>Training tied to live work improves retention, speed-to-competence, and associate confidence.</td>
+          <td>Training completion, competency checks, turnover, coaching frequency.</td>
+        </tr>
+        <tr>
+          <td>Decision Speed</td>
+          <td>Earlier alerts reduce missed operating windows and improve same-day action.</td>
+          <td>Alert-to-action time, mission completion, leader review cadence.</td>
+        </tr>
+      </table>
+    </div>
+
+    <h3>ROI After Cost</h3>
+    <p>
+      If the conservative annual opportunity is $48.8M and the pilot costs $750K at the high end, the pilot does not need to
+      capture the full division opportunity to justify itself. It only needs to prove a credible path to scaled value.
+    </p>
+
+    <div class="callout green">
+      <strong>Executive ROI argument:</strong> The financial case is strongest when positioned as staged evidence:
+      pre-pilot credibility, pilot proof, district validation, then division rollout.
+    </div>
+  </div>
+</section>
+
+<section id="rollout10">
+  <div class="panel">
+    <div class="doc">10-point rollout plan</div>
+    <h2>10-Point Rollout Plan</h2>
+
+    <p>
+      The 10-point rollout plan gives executives a disciplined path from concept to division adoption.
+      Each step contains a decision gate, measurable output, and risk control.
+    </p>
+
+    <div class="timeline">
+      <div class="step"><div class="step-num">1</div><div><h4>Executive Alignment</h4><p>Confirm the strategic sponsor, operating problem, pilot scope, budget range, and decision criteria.</p></div></div>
+      <div class="step"><div class="step-num">2</div><div><h4>Pre-Pilot Creation</h4><p>Build the thesis portal, financial model, prototype dashboards, department logic, and red team analysis.</p></div></div>
+      <div class="step"><div class="step-num">3</div><div><h4>Data Feasibility Review</h4><p>Inventory data sources, quality, access, refresh cadence, privacy controls, and integration complexity.</p></div></div>
+      <div class="step"><div class="step-num">4</div><div><h4>Pilot Charter Approval</h4><p>Define stores, departments, metrics, timeline, governance, training, and go/no-go criteria.</p></div></div>
+      <div class="step"><div class="step-num">5</div><div><h4>Baseline Measurement</h4><p>Collect pre-pilot data for shrink, markdowns, sales, labor, training, food safety, and execution consistency.</p></div></div>
+      <div class="step"><div class="step-num">6</div><div><h4>Three-Store Pilot</h4><p>Launch in low, medium, and high-volume stores with weekly measurement and feedback loops.</p></div></div>
+      <div class="step"><div class="step-num">7</div><div><h4>Pilot Evaluation</h4><p>Compare results against baseline, adoption, usability, behavior change, and financial indicators.</p></div></div>
+      <div class="step"><div class="step-num">8</div><div><h4>District Expansion</h4><p>Expand only after pilot proof. Test consistency across a larger district environment.</p></div></div>
+      <div class="step"><div class="step-num">9</div><div><h4>Division Rollout</h4><p>Roll out in waves across King Soopers with training, governance, field support, and executive review.</p></div></div>
+      <div class="step"><div class="step-num">10</div><div><h4>Kroger Enterprise Review</h4><p>Present evidence, ROI, operating lessons, risk controls, and scalability recommendation to Kroger counterparts.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="division">
+  <div class="panel">
+    <div class="doc">Detailed division rollout and cost-based analysis</div>
+    <h2>King Soopers Division Rollout</h2>
+
+    <p>
+      Division rollout should only begin after a successful pilot and district validation. The goal is to avoid a technology-first launch
+      and instead create a behavior-first operating rollout.
+    </p>
+
+    <h3>Rollout Waves</h3>
+    <div class="table-wrap">
+      <table>
+        <tr>
+          <th>Wave</th>
+          <th>Scope</th>
+          <th>Purpose</th>
+          <th>Estimated Cost</th>
+        </tr>
+        <tr>
+          <td>Wave 0</td>
+          <td>Pre-pilot creation</td>
+          <td>Build prototype, thesis, cost model, and pilot design.</td>
+          <td>$50K–$150K</td>
+        </tr>
+        <tr>
+          <td>Wave 1</td>
+          <td>Three-store pilot</td>
+          <td>Validate adoption, metrics, workflow, and behavior change.</td>
+          <td>$250K–$750K</td>
+        </tr>
+        <tr>
+          <td>Wave 2</td>
+          <td>District validation</td>
+          <td>Expand to 10–25 stores to test consistency across leadership structures.</td>
+          <td>$750K–$1.8M</td>
+        </tr>
+        <tr>
+          <td>Wave 3</td>
+          <td>Division rollout</td>
+          <td>Scale across 155 stores with support, governance, training, analytics, and refinement.</td>
+          <td>$2M–$5M</td>
+        </tr>
+        <tr>
+          <td>Wave 4</td>
+          <td>Enterprise scalability review</td>
+          <td>Prepare Kroger-wide business case if division results justify expansion.</td>
+          <td>$250K–$750K</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="chart">
+      <div class="chart-title">Rollout investment ladder</div>
+      <div class="chart-note">High-end estimate by rollout phase.</div>
+      <div class="bars">
+        <div class="bar yellow" style="height:3%">$150K<span>Pre-pilot</span></div>
+        <div class="bar" style="height:15%">$750K<span>Pilot</span></div>
+        <div class="bar orange" style="height:36%">$1.8M<span>District</span></div>
+        <div class="bar green" style="height:100%">$5M<span>Division</span></div>
+        <div class="bar red" style="height:15%">$750K<span>Enterprise Review</span></div>
+      </div>
+    </div>
+
+    <h3>Division Rollout Requirements</h3>
+    <ul>
+      <li>Executive sponsor and steering committee.</li>
+      <li>Data governance and privacy controls.</li>
+      <li>Field training team and department-specific training modules.</li>
+      <li>Store leader and department leader operating cadence.</li>
+      <li>Weekly measurement reports during launch.</li>
+      <li>Support desk or field response process.</li>
+      <li>Change management communication plan.</li>
+      <li>Ethics and associate trust framework.</li>
+      <li>Quarterly executive ROI review.</li>
+      <li>Enterprise scalability documentation.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="impact">
+  <div class="panel green">
+    <div class="doc">Company impact analysis</div>
+    <h2>Company Impact Analysis</h2>
+
+    <p>
+      F.R.I.E.N.D. has potential impact beyond direct financial return. It can influence leadership quality,
+      associate confidence, operating consistency, customer experience, shrink discipline, and division scalability.
+    </p>
+
+    <h3>Impact Areas</h3>
+    <div class="grid">
+      <div class="card green">
+        <h4>Financial Impact</h4>
+        <p>Improved shrink, markdowns, sales floor readiness, labor clarity, and training efficiency.</p>
+      </div>
+      <div class="card">
+        <h4>Leadership Impact</h4>
+        <p>Stronger coaching language, clearer routines, faster diagnosis, and better decision quality.</p>
+      </div>
+      <div class="card yellow">
+        <h4>Associate Impact</h4>
+        <p>Clearer expectations, better training support, less ambiguity, and greater confidence in daily work.</p>
+      </div>
+      <div class="card red">
+        <h4>Risk Impact</h4>
+        <p>Improved food safety visibility, operational compliance, and early warning indicators.</p>
+      </div>
+    </div>
+
+    <h3>Shareholder and Analyst Relevance</h3>
+    <p>
+      For shareholders and analysts, the proposal matters because it connects operational execution to measurable economics.
+      Kroger reported total company sales of $147.1 billion for 2024, meaning even small percentage improvements in execution,
+      shrink, productivity, and customer experience can become material at scale.
+    </p>
+
+    <h3>Strategic Company Benefits</h3>
+    <ul>
+      <li>Creates a disciplined test of AI-enabled retail operations without requiring immediate enterprise deployment.</li>
+      <li>Supports operating simplification and store-level clarity.</li>
+      <li>Improves the ability to compare performance across stores and departments.</li>
+      <li>Builds leadership development into the execution system.</li>
+      <li>Creates a reusable playbook for potential Kroger enterprise review.</li>
+    </ul>
+
+    <div class="chart">
+      <div class="chart-title">Company impact scoring model</div>
+      <div class="chart-note">Illustrative impact potential after successful division rollout.</div>
+      <div class="bars">
+        <div class="bar green" style="height:88%">88<span>Financial</span></div>
+        <div class="bar" style="height:82%">82<span>Leadership</span></div>
+        <div class="bar yellow" style="height:76%">76<span>Training</span></div>
+        <div class="bar red" style="height:70%">70<span>Risk</span></div>
+        <div class="bar orange" style="height:84%">84<span>Scalability</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="redteam">
+  <div class="panel red">
+    <div class="doc">Red team analysis</div>
+    <h2>Red Team Analysis: Executive Scrutiny and Objections</h2>
+
+    <p>
+      A serious executive proposal must challenge itself before others challenge it. The following red team analysis identifies
+      likely objections from executives, finance, operations, IT, legal, HR, store leaders, and associates.
+    </p>
+
+    <div class="table-wrap">
+      <table>
+        <tr>
+          <th>Challenge</th>
+          <th>Risk</th>
+          <th>Response</th>
+        </tr>
+        <tr>
+          <td>“The ROI is speculative.”</td>
+          <td>Leadership may reject the model as overbuilt or optimistic.</td>
+          <td>Frame all numbers as modeled estimates and use pilot data to validate or disprove assumptions.</td>
+        </tr>
+        <tr>
+          <td>“This is another dashboard.”</td>
+          <td>Executives may assume it adds complexity rather than reducing it.</td>
+          <td>Emphasize mission engine, coaching prompts, behavior change, and role-based operating routines.</td>
+        </tr>
+        <tr>
+          <td>“Associates will feel monitored.”</td>
+          <td>Low trust may damage adoption.</td>
+          <td>Use transparent communication, human authority, coaching language, and no punitive pilot use.</td>
+        </tr>
+        <tr>
+          <td>“Data quality may be unreliable.”</td>
+          <td>Bad data can create bad decisions and destroy trust.</td>
+          <td>Show confidence levels, validate data sources, and allow correction before scaling.</td>
+        </tr>
+        <tr>
+          <td>“IT integration may be expensive.”</td>
+          <td>Cost and complexity could exceed estimates.</td>
+          <td>Start with pre-pilot feasibility and limited-scope pilot integrations.</td>
+        </tr>
+        <tr>
+          <td>“Store leaders are already overloaded.”</td>
+          <td>Adoption may fail if the system adds work.</td>
+          <td>Design around reducing cognitive load, not adding reporting tasks.</td>
+        </tr>
+        <tr>
+          <td>“The pilot may not scale.”</td>
+          <td>A successful pilot may not translate to division-wide success.</td>
+          <td>Use low, medium, and high-volume pilot stores, then district validation before full rollout.</td>
+        </tr>
+      </table>
+    </div>
+
+    <h3>Red Team Severity Model</h3>
+    <div class="chart">
+      <div class="chart-title">Risk severity before mitigation</div>
+      <div class="chart-note">Illustrative red team severity scores.</div>
+      <div class="bars">
+        <div class="bar red" style="height:94%">94<span>Adoption</span></div>
+        <div class="bar red" style="height:90%">90<span>Data</span></div>
+        <div class="bar yellow" style="height:78%">78<span>Cost</span></div>
+        <div class="bar orange" style="height:82%">82<span>Trust</span></div>
+        <div class="bar" style="height:74%">74<span>Scale</span></div>
+      </div>
+    </div>
+
+    <div class="callout red">
+      <strong>Red team conclusion:</strong> The proposal becomes stronger when it admits uncertainty.
+      The correct executive ask is not “approve everything.” The correct ask is “approve a disciplined pre-pilot and pilot to generate evidence.”
+    </div>
+  </div>
+</section>
+
+<section id="governance">
+  <div class="panel">
+    <div class="doc">Governance, ethics, and trust</div>
+    <h2>Governance and Trust Framework</h2>
+
+    <p>
+      F.R.I.E.N.D. must be governed as an operating system, not merely a technology tool.
+      Governance should define ownership, decision rights, privacy standards, ethics limits, data controls, and review cadence.
+    </p>
+
+    <h3>Governance Structure</h3>
+    <div class="grid">
+      <div class="card">
+        <h4>Executive Sponsor</h4>
+        <p>Owns strategic approval, budget, and executive communication.</p>
+      </div>
+      <div class="card">
+        <h4>Division Steering Team</h4>
+        <p>Reviews pilot results, risks, rollout gates, and operational alignment.</p>
+      </div>
+      <div class="card green">
+        <h4>Store Pilot Leaders</h4>
+        <p>Own field execution, associate feedback, daily usage, and pilot discipline.</p>
+      </div>
+      <div class="card red">
+        <h4>Data and Ethics Review</h4>
+        <p>Protects privacy, fairness, explainability, and responsible use.</p>
+      </div>
+    </div>
+
+    <h3>Ethics Principles</h3>
+    <ul>
+      <li>Human leaders remain responsible for decisions.</li>
+      <li>Associates should know how the system is being used.</li>
+      <li>AI recommendations must be explainable.</li>
+      <li>Data should not be used outside approved scope.</li>
+      <li>Pilot results should not be used punitively before validation.</li>
+      <li>The system should strengthen dignity, clarity, and development.</li>
+    </ul>
+
+    <h3>Decision Gates</h3>
+    <ol>
+      <li>Pre-pilot approval.</li>
+      <li>Data feasibility approval.</li>
+      <li>Pilot launch approval.</li>
+      <li>Pilot midpoint review.</li>
+      <li>Pilot final review.</li>
+      <li>District expansion approval.</li>
+      <li>Division rollout approval.</li>
+      <li>Enterprise scalability review.</li>
+    </ol>
+  </div>
+</section>
+
+<section id="sources">
+  <div class="panel">
+    <div class="doc">Sources and citation base</div>
+    <h2>Sources, Assumptions, and Citation Notes</h2>
+
+    <p>
+      The financial values in this proposal are modeled estimates for planning and executive discussion.
+      Formal submission should replace modeled values with internal Kroger and King Soopers data, finance-approved assumptions,
+      and validated pilot results.
+    </p>
+
+    <h3>External Sources</h3>
+    <div class="table-wrap source">
+      <table>
+        <tr>
+          <th>Source</th>
+          <th>Used For</th>
+          <th>Link</th>
+        </tr>
+        <tr>
+          <td>Kroger FY 2024 Results</td>
+          <td>Company sales context and public financial reference.</td>
+          <td><a href="https://ir.kroger.com/news/news-details/2025/Kroger-Reports-Fourth-Quarter-and-Full-Year-2024-Results-Announces-Guidance-for-2025/" target="_blank">Kroger 2024 Results</a></td>
+        </tr>
+        <tr>
+          <td>Kroger Annual Reports</td>
+          <td>Public financial filings and annual reporting archive.</td>
+          <td><a href="https://ir.kroger.com/financials/annual-reports/default.aspx" target="_blank">Kroger Annual Reports</a></td>
+        </tr>
+        <tr>
+          <td>Kroger 2024 Form 10-K</td>
+          <td>Public company risk, operations, and financial disclosure.</td>
+          <td><a href="https://www.sec.gov/Archives/edgar/data/56873/000155837025004267/kr-20250201x10k.htm" target="_blank">SEC Form 10-K</a></td>
+        </tr>
+        <tr>
+          <td>National Retail Federation Shrink Research</td>
+          <td>Retail shrink context and industry benchmark language.</td>
+          <td><a href="https://nrf.com/research/national-retail-security-survey-2023" target="_blank">NRF National Retail Security Survey</a></td>
+        </tr>
+        <tr>
+          <td>NRF Reality of Retail Shrink</td>
+          <td>Definition and limitations of shrink as a retail measurement.</td>
+          <td><a href="https://nrf.com/blog/reality-retail-shrink" target="_blank">NRF Shrink Explanation</a></td>
+        </tr>
+        <tr>
+          <td>FDA Food Code</td>
+          <td>Food safety and retail food protection context.</td>
+          <td><a href="https://www.fda.gov/food/fda-food-code/food-code-2022" target="_blank">FDA Food Code 2022</a></td>
+        </tr>
+        <tr>
+          <td>OSHA Retail Safety</td>
+          <td>Retail workplace safety context.</td>
+          <td><a href="https://www.osha.gov/retail" target="_blank">OSHA Retail Safety</a></td>
+        </tr>
+        <tr>
+          <td>Bureau of Labor Statistics</td>
+          <td>Labor market and retail employment context.</td>
+          <td><a href="https://www.bls.gov/" target="_blank">BLS</a></td>
+        </tr>
+        <tr>
+          <td>McKinsey Retail Insights</td>
+          <td>Retail transformation, operations, and technology context.</td>
+          <td><a href="https://www.mckinsey.com/industries/retail/our-insights" target="_blank">McKinsey Retail Insights</a></td>
+        </tr>
+        <tr>
+          <td>Deloitte Retail Insights</td>
+          <td>Retail operations, digital transformation, and consumer industry context.</td>
+          <td><a href="https://www2.deloitte.com/us/en/insights/industry/retail-distribution.html" target="_blank">Deloitte Retail Insights</a></td>
+        </tr>
+      </table>
+    </div>
+
+    <h3>Modeled Assumptions to Validate Internally</h3>
+    <ul>
+      <li>Exact number of active King Soopers division stores.</li>
+      <li>Actual department-level shrink and markdown opportunity.</li>
+      <li>Actual labor friction and productivity assumptions.</li>
+      <li>Training completion versus applied competency rates.</li>
+      <li>Technology integration cost and data access requirements.</li>
+      <li>Change management capacity and field support cost.</li>
+      <li>Actual pilot performance versus baseline.</li>
+    </ul>
+
+    <div class="callout">
+      <strong>Final source note:</strong> Kroger reported 2024 total company sales of $147.1 billion, and NRF has reported average retail shrink rate context in its retail security research. Those public sources support the seriousness of operational improvement, but the proposal’s exact ROI must be validated with internal data before executive finance approval.
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  F.R.I.E.N.D. Proposal Portal | King Soopers Division Concept | Executive Thesis Format
+</footer>
+
+<script>
+function showSection(id,btn){
+  document.querySelectorAll("section").forEach(s=>s.classList.remove("active"));
+  document.querySelectorAll(".nav button").forEach(b=>b.classList.remove("active"));
+  document.getElementById(id).classList.add("active");
+  btn.classList.add("active");
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+</script>
+
+</body>
+</html>
