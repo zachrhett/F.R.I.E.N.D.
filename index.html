@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>F.R.I.E.N.D. Proposal | King Soopers Division</title>
+
+  <style>
+    :root {
+      --blue: #003f8f;
+      --dark-blue: #071f45;
+      --yellow: #ffc220;
+      --red: #d71920;
+      --white: #ffffff;
+      --light: #f4f7fb;
+      --gray: #64748b;
+      --line: #d8e1ef;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--light);
+      color: #102033;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      min-height: 100vh;
+    }
+
+    .sidebar {
+      background: linear-gradient(180deg, var(--dark-blue), var(--blue));
+      color: white;
+      padding: 22px;
+      min-height: 100vh;
+    }
+
+    .logo {
+      background: white;
+      color: var(--red);
+      border: 5px solid var(--yellow);
+      border-radius: 14px;
+      padding: 14px;
+      text-align: center;
+      font-weight: 900;
+      font-size: 26px;
+      margin-bottom: 24px;
+    }
+
+    .logo span {
+      display: block;
+      color: var(--blue);
+      font-size: 14px;
+      margin-top: 4px;
+    }
+
+    .sidebar h1 {
+      font-size: 34px;
+      line-height: 1;
+      margin: 0 0 14px;
+    }
+
+    .sidebar p {
+      color: #dbeafe;
+      line-height: 1.45;
+    }
+
+    .goldline {
+      height: 3px;
+      background: var(--yellow);
+      margin: 18px 0;
+      border-radius: 999px;
+    }
+
+    .pill {
+      background: rgba(255, 255, 255, 0.12);
+      padding: 12px;
+      border-radius: 12px;
+      margin: 10px 0;
+      font-weight: 700;
+    }
+
+    .hero {
+      background: radial-gradient(circle at top right, #0072ce, var(--dark-blue) 55%);
+      color: white;
+      padding: 30px 34px;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      margin: 0;
+      letter-spacing: 3px;
+    }
+
+    .hero h2 {
+      margin: 8px 0 0;
+      font-size: 19px;
+      color: var(--yellow);
+    }
+
+    .hero p {
+      max-width: 900px;
+      line-height: 1.45;
+    }
+
+    .kpis {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .kpi {
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 14px;
+      padding: 14px;
+    }
+
+    .kpi strong {
+      display: block;
+      font-size: 25px;
+      color: var(--yellow);
+    }
+
+    .tabs {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      background: white;
+      border-bottom: 1px solid var(--line);
+      padding: 14px 18px;
+      position: sticky;
+      top: 0;
+      z-index: 5;
+    }
+
+    .tabs button {
+      border: 1px solid var(--line);
+      background: white;
+      color: var(--blue);
+      border-radius: 999px;
+      padding: 11px 15px;
+      font-weight: 800;
+      white-space: nowrap;
+      cursor: pointer;
+    }
+
+    .tabs button.active {
+      background: var(--blue);
+      color: white;
+    }
+
+    .workspace {
+      padding: 22px;
+    }
+
+    .section {
+      display: none;
+      background: white;
+      border-radius: 20px;
+      padding: 26px;
+      box-shadow: 0 10px 28px rgba(0,0,0,.1);
+      border-top: 8px solid var(--blue);
+      min-height: 600px;
+    }
+
+    .section.active {
+      display: block;
+    }
+
+    .section h2 {
+      font-size: 34px;
+      color: var(--blue);
+      margin: 0 0 8px;
+    }
+
+    .summary {
+      font-size: 17px;
+      line-height: 1.55;
+      max-width: 1050px;
+    }
+
+    @media(max-width:900px) {
+      .layout {
+        grid-template-columns: 1fr;
+      }
+
+      .sidebar {
+        min-height: auto;
+      }
+
+      .hero h1 {
+        font-size: 34px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="layout">
+
+  <aside class="sidebar">
+    <div class="logo">
+      KING SOOPERS
+      <span>Division Proposal</span>
+    </div>
+
+    <h1>F.R.I.E.N.D.</h1>
+    <p>Full Retail Integration Engaged Network Dynamics</p>
+
+    <div class="goldline"></div>
+
+    <div class="pill">📊 Data Driven</div>
+    <div class="pill">👥 People Focused</div>
+    <div class="pill">🎯 Performance Oriented</div>
+    <div class="pill">💡 Future Ready</div>
+  </aside>
+
+  <main>
+
+    <header class="hero">
+      <h1>F.R.I.E.N.D. Proposal</h1>
+      <h2>King Soopers Division</h2>
+      <p>
+        Operational Intelligence • Leadership Development • Associate Success • Retail Execution • ROI Growth
+      </p>
+
+      <div class="kpis">
+        <div class="kpi"><strong>155</strong>Stores</div>
+        <div class="kpi"><strong>27,000+</strong>Associates</div>
+        <div class="kpi"><strong>3</strong>Pilot Stores</div>
+        <div class="kpi"><strong>20–30</strong>Regional Rollout</div>
+        <div class="kpi"><strong>12</strong>Proposal Tabs</div>
+      </div>
+    </header>
+
+    <nav class="tabs">
+      <button class="active" onclick="showSection('executive', this)">Executive View</button>
+      <button onclick="showSection('prepilot', this)">1. Pre-Pilot</button>
+      <button onclick="showSection('cost', this)">2. Pre-Pilot Cost</button>
+      <button onclick="showSection('pilot', this)">3. Pilot Program</button>
+      <button onclick="showSection('regional', this)">4. Regional Rollout</button>
+      <button onclick="showSection('division', this)">5. Division Rollout</button>
+      <button onclick="showSection('roi', this)">6. ROI</button>
+      <button onclick="showSection('inaction', this)">7. Inaction</button>
+      <button onclick="showSection('redteam', this)">8. Red Team</button>
+      <button onclick="showSection('rollout', this)">9. 10-Point Rollout</button>
+      <button onclick="showSection('sources', this)">10. Sources</button>
+      <button onclick="showSection('charts', this)">11. Charts</button>
+      <button onclick="showSection('thanks', this)">12. Thank You</button>
+    </nav>
+
+    <div class="workspace">
+
+      <section id="executive" class="section active">
+        <h2>Executive View</h2>
+        <p class="summary">
+          This is the executive landing page for the F.R.I.E.N.D. proposal.
+          We will build this section first.
+        </p>
+      </section>
+
+      <section id="prepilot" class="section">
+        <h2>1. Pre-Pilot</h2>
+        <p class="summary">Pre-Pilot content will go here.</p>
+      </section>
+
+      <section id="cost" class="section">
+        <h2>2. Pre-Pilot Cost</h2>
+        <p class="summary">Pre-Pilot Cost content will go here.</p>
+      </section>
+
+      <section id="pilot" class="section">
+        <h2>3. Pilot Program</h2>
+        <p class="summary">Pilot Program content will go here.</p>
+      </section>
+
+      <section id="regional" class="section">
+        <h2>4. Regional Rollout</h2>
+        <p class="summary">Regional Rollout content will go here.</p>
+      </section>
+
+      <section id="division" class="section">
+        <h2>5. Division Rollout</h2>
+        <p class="summary">Division Rollout content will go here.</p>
+      </section>
+
+      <section id="roi" class="section">
+        <h2>6. ROI</h2>
+        <p class="summary">ROI content will go here.</p>
+      </section>
+
+      <section id="inaction" class="section">
+        <h2>7. Cost of Inaction</h2>
+        <p class="summary">Cost of Inaction content will go here.</p>
+      </section>
+
+      <section id="redteam" class="section">
+        <h2>8. Red Team Analysis</h2>
+        <p class="summary">Red Team content will go here.</p>
+      </section>
+
+      <section id="rollout" class="section">
+        <h2>9. 10-Point Rollout</h2>
+        <p class="summary">10-Point Rollout content will go here.</p>
+      </section>
+
+      <section id="sources" class="section">
+        <h2>10. Sources & Analytics</h2>
+        <p class="summary">Sources content will go here.</p>
+      </section>
+
+      <section id="charts" class="section">
+        <h2>11. Charts & Visualizations</h2>
+        <p class="summary">Charts content will go here.</p>
+      </section>
+
+      <section id="thanks" class="section">
+        <h2>12. Thank You</h2>
+        <p class="summary">Thank You content will go here.</p>
+      </section>
+
+    </div>
+
+  </main>
+
+</div>
+
+<script>
+function showSection(id, button) {
+  document.querySelectorAll('.section').forEach(section => {
+    section.classList.remove('active');
+  });
+
+  document.getElementById(id).classList.add('active');
+
+  document.querySelectorAll('.tabs button').forEach(btn => {
+    btn.classList.remove('active');
+  });
+
+  button.classList.add('active');
+
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+
+</body>
+</html>
