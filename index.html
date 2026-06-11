@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>F.R.I.E.N.D. Proposal | King Soopers Division</title>
+
+<style>
+:root{
+  --blue:#0057b8;
+  --blue-dark:#003f87;
+  --red:#d71920;
+  --yellow:#ffc72c;
+  --white:#ffffff;
+  --ink:#142033;
+  --muted:#64748b;
+  --light:#f5f8fc;
+  --line:#dbe4f0;
+  --green:#16a34a;
+  --orange:#f97316;
+  --shadow:0 12px 30px rgba(15,23,42,.12);
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+
+html{scroll-behavior:smooth}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:var(--light);
+  color:var(--ink);
+  line-height:1.62;
+}
+
+header{
+  background:linear-gradient(135deg,var(--blue),var(--blue-dark));
+  color:white;
+  padding:34px 22px;
+  border-bottom:8px solid var(--yellow);
+}
+
+.wrap{
+  max-width:1450px;
+  margin:auto;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:22px;
+}
+
+.logo-card{
+  background:white;
+  border-radius:18px;
+  padding:12px;
+  width:150px;
+  min-width:150px;
+  box-shadow:0 8px 22px rgba(0,0,0,.18);
+}
+
+.logo-card img{
+  width:100%;
+  display:block;
+}
+
+h1{
+  font-size:clamp(34px,5vw,64px);
+  line-height:1;
+  margin-bottom:10px;
+}
+
+.subtitle{
+  font-size:18px;
+  max-width:1100px;
+  opacity:.95;
+}
+
+.badges{
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+  margin-top:22px;
+}
+
+.badge{
+  display:inline-flex;
+  padding:8px 13px;
+  border-radius:999px;
+  background:white;
+  color:var(--blue-dark);
+  font-weight:900;
+  font-size:13px;
+}
+
+.badge.red{background:var(--red);color:white}
+.badge.yellow{background:var(--yellow);color:#172033}
+
+nav{
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:white;
+  border-bottom:1px solid var(--line);
+  box-shadow:0 4px 18px rgba(15,23,42,.08);
+}
+
+.nav{
+  max-width:1450px;
+  margin:auto;
+  padding:12px;
+  display:flex;
+  gap:8px;
+  overflow-x:auto;
+}
+
+.nav button{
+  border:0;
+  border-radius:999px;
+  background:var(--blue);
+  color:white;
+  font-weight:900;
+  padding:10px 14px;
+  white-space:nowrap;
+  cursor:pointer;
+}
+
+.nav button.active,
+.nav button:hover{background:var(--red)}
+
+main{
+  max-width:1450px;
+  margin:auto;
+  padding:24px;
+}
+
+section{display:none}
+section.active{display:block;animation:fade .2s ease}
+
+@keyframes fade{
+  from{opacity:0;transform:translateY(8px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+.panel{
+  background:white;
+  border-radius:24px;
+  padding:30px;
+  margin-bottom:24px;
+  box-shadow:var(--shadow);
+  border-top:8px solid var(--blue);
+}
+
+.panel.red{border-top-color:var(--red)}
+.panel.yellow{border-top-color:var(--yellow)}
+.panel.green{border-top-color:var(--green)}
+
+.doc{
+  color:var(--red);
+  font-weight:900;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  font-size:13px;
+  margin-bottom:6px;
+}
+
+h2{
+  color:var(--blue-dark);
+  font-size:clamp(27px,3vw,42px);
+  line-height:1.15;
+  margin-bottom:12px;
+}
+
+h3{
+  font-size:24px;
+  margin:24px 0 8px;
+  color:var(--ink);
+}
+
+h4{
+  color:var(--blue-dark);
+  font-size:18px;
+  margin:16px 0 6px;
+}
+
+p{margin-bottom:12px}
+
+ul,ol{
+  margin:8px 0 16px 24px;
+}
+
+li{margin-bottom:7px}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(255px,1fr));
+  gap:16px;
+  margin:20px 0;
+}
+
+.card{
+  background:white;
+  border:1px solid var(--line);
+  border-left:6px solid var(--blue);
+  border-radius:18px;
+  padding:18px;
+  box-shadow:0 6px 18px rgba(15,23,42,.06);
+}
+
+.card.red{border-left-color:var(--red)}
+.card.yellow{border-left-color:var(--yellow)}
+.card.green{border-left-color:var(--green)}
+.card.orange{border-left-color:var(--orange)}
+
+.label{
+  font-size:12px;
+  color:var(--muted);
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:.05em;
+}
+
+.metric{
+  color:var(--blue);
+  font-size:34px;
+  font-weight:900;
+  line-height:1.05;
+  margin:6px 0;
+}
+
+.metric.red{color:var(--red)}
+.metric.green{color:var(--green)}
+.metric.yellow{color:#946200}
+.metric.orange{color:var(--orange)}
+
+details{
+  background:#fbfdff;
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:16px;
+  margin:12px 0;
+}
+
+summary{
+  color:var(--blue-dark);
+  font-weight:900;
+  cursor:pointer;
+  font-size:17px;
+}
+
+.callout{
+  border-radius:18px;
+  padding:18px;
+  margin:18px 0;
+  background:#eef6ff;
+  border-left:8px solid var(--blue);
+}
+
+.callout.red{background:#fff1f2;border-left-color:var(--red)}
+.callout.yellow{background:#fff7db;border-left-color:var(--yellow)}
+.callout.green{background:#ecfdf5;border-left-color:var(--green)}
+
+.table-wrap{
+  overflow-x:auto;
+  margin:18px 0;
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+  background:white;
+  border:1px solid var(--line);
+  border-radius:14px;
+  overflow:hidden;
+}
+
+th{
+  background:var(--blue);
+  color:white;
+  padding:12px;
+  text-align:left;
+  font-size:13px;
+}
+
+td{
+  border-top:1px solid var(--line);
+  padding:12px;
+  vertical-align:top;
+}
+
+tr:nth-child(even) td{background:#f8fbff}
+
+.chart{
+  background:white;
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:18px;
+  margin:20px 0;
+}
+
+.chart-title{
+  font-weight:900;
+  color:var(--blue-dark);
+}
+
+.chart-note{
+  color:var(--muted);
+  font-size:13px;
+  margin-bottom:14px;
+}
+
+.bars{
+  display:flex;
+  align-items:flex-end;
+  gap:14px;
+  height:270px;
+  padding:18px 8px 44px;
+  border-left:2px solid var(--line);
+  border-bottom:2px solid var(--line);
+}
+
+.bar{
+  flex:1;
+  min-width:38px;
+  background:var(--blue);
+  color:white;
+  border-radius:10px 10px 0 0;
+  display:flex;
+  align-items:flex-start;
+  justify-content:center;
+  padding-top:7px;
+  position:relative;
+  font-weight:900;
+  font-size:12px;
+  text-align:center;
+}
+
+.bar.red{background:var(--red)}
+.bar.yellow{background:var(--yellow);color:#172033}
+.bar.green{background:var(--green)}
+.bar.orange{background:var(--orange)}
+
+.bar span{
+  position:absolute;
+  bottom:-35px;
+  left:50%;
+  transform:translateX(-50%);
+  color:var(--muted);
+  font-size:11px;
+  font-weight:900;
+  white-space:nowrap;
+}
+
+.timeline{
+  display:grid;
+  gap:14px;
+  margin:20px 0;
+}
+
+.step{
+  display:grid;
+  grid-template-columns:70px 1fr;
+  gap:14px;
+  background:#fbfdff;
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:16px;
+}
+
+.step-num{
+  width:54px;
+  height:54px;
+  border-radius:50%;
+  background:var(--blue);
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:900;
+  font-size:18px;
+}
+
+.step:nth-child(3n) .step-num{background:var(--red)}
+.step:nth-child(4n) .step-num{background:var(--yellow);color:#172033}
+.step:nth-child(5n) .step-num{background:var(--green)}
+
+.print-btn{
+  border:0;
+  border-radius:999px;
+  background:var(--red);
+  color:white;
+  padding:10px 14px;
+  font-weight:900;
+  cursor:pointer;
+  margin:10px 8px 10px 0;
+}
+
+.print-btn.blue{background:var(--blue)}
+.print-btn.yellow{background:var(--yellow);color:#172033}
+
+.source a{
+  color:var(--blue-dark);
+  font-weight:900;
+  word-break:break-word;
+}
+
+footer{
+  text-align:center;
+  padding:28px;
+  color:var(--muted);
+}
+
+@media(max-width:720px){
+  main{padding:14px}
+  .panel{padding:20px}
+  .brand{align-items:flex-start;flex-direction:column}
+  .logo-card{width:135px}
+  .bars{gap:7px}
+  .bar{font-size:10px}
+  .step{grid-template-columns:1fr}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="brand">
+      <div class="logo-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/King_Soopers_logo.svg" alt="King Soopers Logo">
+      </div>
+      <div>
+        <h1>F.R.I.E.N.D. Proposal</h1>
+        <p class="subtitle">
+          Full Retail Integration Engaged Network Dynamics — a King Soopers Division proposal for retail intelligence,
+          operational execution, training integration, leadership development, cost avoidance, ROI growth, and scalable decision support.
+        </p>
+      </div>
+    </div>
+
+    <div class="badges">
+      <span class="badge yellow">Kroger = Enterprise</span>
+      <span class="badge">King Soopers = Division</span>
+      <span class="badge red">Executive Proposal Website</span>
+      <span class="badge">Great People Review Day</span>
+      <span class="badge">Pre-Pilot • Pilot • Regional • Division • ROI •
