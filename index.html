@@ -61,9 +61,14 @@ body{
 }
 
 .logo img{
-  width:100%;
-  height:auto
-};
+    width:100%;
+    max-width:120px;
+    height:auto;
+    display:block;
+    margin:auto;
+    object-fit:contain;
+}
+  
   object-fit:contain;
   background:#d71920;
 }
@@ -130,9 +135,9 @@ body{
 /* MAIN */
 
 .main{
-  display:grid;
-  grid-template-rows:142px 62px 1fr;
-  overflow:hidden;
+    flex:1;
+    min-width:0;
+    overflow-x:auto;
 }
 
 .header{
@@ -522,11 +527,11 @@ body{
 /* CONTENT SECTIONS */
 
 .content-screen{
-  height:100%;
-  overflow:auto;
-  padding-right:6px;
+    width:100%;
+    max-width:none;
+    overflow-x:auto;
 }
-
+  
 .section-title{
   font-size:30px;
   color:#002b6c;
