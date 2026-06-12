@@ -1,18 +1,34 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>F.R.I.E.N.D. Executive Proposal</title>
-  <link rel="stylesheet" href="styles.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>F.R.I.E.N.D. Executive Proposal</title>
+
+<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <main id="app">
-    <img id="screen" src="assets/screens/screen_01.jpg" alt="F.R.I.E.N.D. Executive Proposal screen" />
-    <button class="hit left" id="prev"></button>
-    <button class="hit right" id="next"></button>
-    <nav id="screenNav"></nav>
-  </main>
-  <script src="script.js"></script>
+
+<div class="viewer">
+
+<img id="screen"
+src="assets/screens/screen_01.jpg"
+alt="F.R.I.E.N.D. Proposal">
+
+<div class="controls">
+
+<button onclick="previousScreen()">◀</button>
+
+<span id="counter">1 / 29</span>
+
+<button onclick="nextScreen()">▶</button>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
 </body>
 </html>
