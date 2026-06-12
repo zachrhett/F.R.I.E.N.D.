@@ -62,7 +62,8 @@ body{
 
 .logo img{
   width:100%;
-  height:100%;
+  height:auto
+};
   object-fit:contain;
   background:#d71920;
 }
@@ -177,15 +178,12 @@ body{
   font-weight:900;
 }
 
-.cart-graphic{
-  position:absolute;
-  right:45px;
-  top:25px;
-  width:100px;
-  height:80px;
-  z-index:3;
+.cart-graphic img{
+  width:120px;
+  height:auto;
+  display:block;
 }
-
+  
 .cart-graphic svg{
   width:100%;
   height:100%;
@@ -628,15 +626,10 @@ ol{
   <h1>F.R.I.E.N.D. Proposal</h1>
   <p><span class="yellow">Full Retail Integration Engaged Network Dynamics</span> — a King Soopers Division proposal for retail intelligence, operational execution, training integration, leadership development, cost avoidance, ROI growth, and scalable decision support.</p>
 
-  <div class="cart-graphic">
-    <svg viewBox="0 0 120 90">
-      <polyline points="10,15 25,15 36,58 92,58 106,25 32,25" stroke="#6ee7ff" stroke-width="5" fill="none"/>
-      <line x1="40" y1="35" x2="100" y2="35" stroke="#6ee7ff" stroke-width="3"/>
-      <line x1="43" y1="45" x2="96" y2="45" stroke="#6ee7ff" stroke-width="3"/>
-      <circle cx="45" cy="72" r="7" fill="none" stroke="#6ee7ff" stroke-width="4"/>
-      <circle cx="83" cy="72" r="7" fill="none" stroke="#6ee7ff" stroke-width="4"/>
-    </svg>
-  </div>
+ <div class="cart-graphic">
+  <img src="screen1.png" alt="F.R.I.E.N.D. Graphic">
+</div>
+  
 </header>
 
 <nav class="tabs">
