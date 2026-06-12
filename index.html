@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>F.R.I.E.N.D. Proposal</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: #061b3d;
+    font-family: Arial, sans-serif;
+  }
+
+  .tabs {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding: 14px;
+    background: #061b3d;
+    border-bottom: 4px solid #d7b83f;
+  }
+
+  .tabs button {
+    flex: 0 0 auto;
+    padding: 12px 18px;
+    border-radius: 12px;
+    border: 1px solid #cfd8e3;
+    background: white;
+    color: #062654;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  .tabs button.active {
+    background: #064a91;
+    color: white;
+  }
+
+  .page-wrap {
+    width: 100%;
+    overflow-x: auto;
+    background: #061b3d;
+  }
+
+  #proposalImage {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+</style>
+</head>
+
+<body>
+
+<div class="tabs" id="tabs"></div>
+
+<div class="page-wrap">
+  <img id="proposalImage" src="executive-view.jpg" alt="F.R.I.E.N.D. Proposal Page">
+</div>
+
+<script>
+const pages = [
+  { title: "Executive View", file: "executive-view.jpg" },
+  { title: "1. Pre-Pilot", file: "pre-pilot.jpg" },
+  { title: "2. Pre-Pilot Cost", file: "pre-pilot-cost.jpg" },
+  { title: "3. Pilot Program", file: "pilot-program.jpg" },
+  { title: "4. Regional Rollout", file: "regional-rollout.jpg" },
+  { title: "5. Division Rollout", file: "division-rollout.jpg" },
+  { title: "6. ROI", file: "roi.jpg" },
+  { title: "7. Inaction", file: "inaction.jpg" },
+  { title: "8. Red Team", file: "red-team.jpg" },
+  { title: "9. 10 Point Rollout", file: "ten-point-rollout.jpg" },
+  { title: "10. Sources", file: "sources.jpg" },
+  { title: "11. Charts & Visuals", file: "charts-visuals.jpg" },
+  { title: "12. Thank You", file: "thank-you.jpg" }
+];
+
+const tabs = document.getElementById("tabs");
+const image = document.getElementById("proposalImage");
+
+pages.forEach((page, index) => {
+  const button = document.createElement("button");
+  button.textContent = page.title;
+  if (index === 0) button.classList.add("active");
+
+  button.onclick = () => {
+    document.querySelectorAll(".tabs button").forEach(btn => btn.classList.remove("active"));
+    button.classList.add("active");
+    image.src = page.file;
+    image.alt = page.title;
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  tabs.appendChild(button);
+});
+</script>
+
+</body>
+</html>
