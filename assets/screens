@@ -1,1 +1,35 @@
-y
+index.html
+style.css
+script.js
+
+assets
+└── screens
+    ├── screen_01.jpg
+    ├── screen_02.jpg
+    ├── screen_03.jpg
+    ├── screen_04.jpg
+    ├── screen_05.jpg
+    ├── screen_06.jpg
+    ├── screen_07.jpg
+    ├── screen_08.jpg
+    ├── screen_09.jpg
+    ├── screen_10.jpg
+    ├── screen_11.jpg
+    ├── screen_12.jpg
+    ├── screen_13.jpg
+    ├── screen_14.jpg
+    ├── screen_15.jpg
+    ├── screen_16.jpg
+    ├── screen_17.jpg
+    ├── screen_18.jpg
+    ├── screen_19.jpg
+    ├── screen_20.jpg
+    ├── screen_21.jpg
+    ├── screen_22.jpg
+    ├── screen_23.jpg
+    ├── screen_24.jpg
+    ├── screen_25.jpg
+    ├── screen_26.jpg
+    ├── screen_27.jpg
+    ├── screen_28.jpg
+    └── screen_29.jpg
