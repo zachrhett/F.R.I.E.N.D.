@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>F.R.I.E.N.D. Proposal</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,Helvetica,sans-serif;background:#cfd3dc;color:#0b2143}
+.app{max-width:1280px;margin:auto;background:#eef1f6;min-height:100vh}
+.shell{display:grid;grid-template-columns:145px 1fr;background:white}
+
+.sidebar{
+  background:#07336f;
+  color:white;
+  min-height:760px;
+  padding:12px 10px;
+}
+.ks{
+  background:#d71920;
+  color:white;
+  border:3px solid #f7c600;
+  padding:7px 4px;
+  font-size:22px;
+  font-weight:900;
+  line-height:.9;
+  text-align:center;
+  margin-bottom:10px;
+}
+.side-title{font-size:20px;font-weight:900;line-height:1.05;margin-bottom:12px}
+.side-desc{
+  color:#ffe680;
+  font-size:11px;
+  line-height:1.45;
+  border-top:2px solid #f7c600;
+  padding-top:10px;
+  margin-bottom:18px;
+}
+.side-item{font-size:12px;font-weight:800;margin:15px 0;color:#eaf3ff}
+
+.main{background:#f3f6fb}
+.hero{
+  background:linear-gradient(90deg,#082d63,#083c83 60%,#071d44);
+  color:white;
+  min-height:112px;
+  padding:20px 18px;
+  position:relative;
+  overflow:hidden;
+}
+.hero:after{
+  content:"";
+  position:absolute;
+  right:0;top:0;bottom:0;
+  width:35%;
+  background:radial-gradient(circle at 60% 45%,rgba(255,255,255,.35),transparent 5%),
+             radial-gradient(circle at 70% 35%,rgba(255,255,255,.25),transparent 6%),
+             linear-gradient(120deg,transparent,rgba(255,255,255,.08));
+}
+.hero h1{font-size:30px;letter-spacing:1px}
+.hero p{font-size:12px;line-height:1.4;max-width:680px;color:#dbeafe;margin-top:5px;font-weight:700}
+
+.tabs{
+  display:flex;
+  gap:6px;
+  flex-wrap:wrap;
+  padding:10px;
+  background:white;
+  border-bottom:1px solid #cbd5e1;
+}
+.tab{
+  border:1px solid #cbd5e1;
+  background:#f8fafc;
+  color:#082d63;
+  padding:7px 10px;
+  border-radius:6px;
+  font-size:11px;
+  font-weight:900;
+}
+.tab.active{background:#082d63;color:white}
+
+.content{padding:14px}
+.page{
+  background:white;
+  border:1px solid #cbd5e1;
+  border-radius:4px;
+  padding:14px;
+}
+.head{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-bottom:12px;
+}
+.eye{
+  width:38px;height:38px;
+  border-radius:50%;
+  background:#eaf2ff;
+  display:grid;
+  place-items:center;
+  color:#0b57a3;
+  font-weight:900;
+  border:2px solid #9cc3ff;
+}
+.head h2{font-size:24px;color:#082d63}
+.head p{font-size:12px;color:#475569;font-weight:700;margin-top:3px}
+
+.kpis{
+  display:grid;
+  grid-template-columns:repeat(6,1fr);
+  gap:8px;
+  margin:10px 0 14px;
+}
+.kpi{
+  background:#f8fafc;
+  border:1px solid #cbd5e1;
+  border-radius:6px;
+  padding:10px 6px;
+  text-align:center;
+}
+.kpi strong{display:block;font-size:23px;color:#082d63}
+.kpi span{font-size:10px;font-weight:900;color:#334155}
+
+.grid{
+  display:grid;
+  grid-template-columns:1.1fr 1fr 1fr;
+  gap:10px;
+}
+.card{
+  border:1px solid #cbd5e1;
+  border-radius:6px;
+  overflow:hidden;
+  background:white;
+}
+.card h3{
+  background:#082d63;
+  color:white;
+  font-size:12px;
+  padding:8px 10px;
+  text-transform:uppercase;
+}
+.body{padding:10px;font-size:12px;line-height:1.45}
+
+.impact{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px;
+}
+.impact-item{
+  display:grid;
+  grid-template-columns:30px 1fr;
+  gap:6px;
+  align-items:start;
+  border-bottom:1px solid #e2e8f0;
+  padding:6px 0;
+}
+.icon{
+  width:25px;height:25px;border-radius:50%;
+  display:grid;place-items:center;
+  color:white;font-size:12px;font-weight:900;
+  background:#0b57a3;
+}
+.red{background:#d71920}.green{background:#16a34a}.yellow{background:#f7c600;color:#10213f}.purple{background:#7c3aed}.orange{background:#f97316}
+
+.journey{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;text-align:center}
+.step{background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:8px 5px;font-size:11px;font-weight:800}
+.step b{display:block;color:white;background:#0b57a3;border-radius:50%;width:26px;height:26px;line-height:26px;margin:0 auto 5px}
+
+.outcome{display:grid;grid-template-columns:28px 1fr;gap:7px;margin:8px 0;align-items:center}
+.outcome b{font-size:12px}
+.note{
+  margin-top:12px;
+  background:#fff7d6;
+  border:1px solid #f7c600;
+  border-radius:6px;
+  padding:10px;
+  font-size:12px;
+  font-weight:800;
+}
+.footer{
+  margin-top:10px;
+  background:#eef2ff;
+  border:1px solid #c7d2fe;
+  padding:10px;
+  font-size:12px;
+  text-align:center;
+  font-weight:900;
+  color:#082d63;
+}
+
+@media(max-width:850px){
+  .shell{grid-template-columns:90px 1fr}
+  .sidebar{padding:8px 6px}
+  .ks{font-size:14px}
+  .side-title{font-size:14px}
+  .side-desc{font-size:9px}
+  .side-item{font-size:9px}
+  .hero h1{font-size:23px}
+  .kpis{grid-template-columns:repeat(2,1fr)}
+  .grid{grid-template-columns:1fr}
+  .impact{grid-template-columns:1fr}
+  .journey{grid-template-columns:1fr}
+}
+</style>
+</head>
+
+<body>
+<div class="app">
+<div class="shell">
+
+<aside class="sidebar">
+  <div class="ks">KING<br>Soopers</div>
+  <div class="side-title">F.R.I.E.N.D.<br>Proposal</div>
+  <div class="side-desc">
+    Full Retail Integration Engaged Network Dynamics — a King Soopers Division proposal for retail intelligence, operational execution, training integration, leadership development, cost avoidance, ROI growth, and scalable decision support.
+  </div>
+  <div class="side-item">📊 Data Driven</div>
+  <div class="side-item">👥 People Focused</div>
+  <div class="side-item">✅ Performance Oriented</div>
+  <div class="side-item">💡 Future Ready</div>
+</aside>
+
+<main class="main">
+  <section class="hero">
+    <h1>F.R.I.E.N.D. Proposal</h1>
+    <p>Full Retail Integration Engaged Network Dynamics — A King Soopers Division proposal for retail intelligence, operational execution, training integration, leadership development, cost avoidance, ROI growth, and scalable decision support.</p>
+  </section>
+
+  <nav class="tabs">
+    <button class="tab active" onclick="show('executive',this)">Executive View</button>
+    <button class="tab" onclick="show('prepilot',this)">1. Pre-Pilot</button>
+    <button class="tab" onclick="show('cost',this)">2. Pre-Pilot Cost</button>
+    <button class="tab" onclick="show('pilot',this)">3. Pilot Program</button>
+    <button class="tab" onclick="show('regional',this)">4. Regional Rollout</button>
+    <button class="tab" onclick="show('division',this)">5. Division Rollout</button>
+    <button class="tab" onclick="show('roi',this)">6. ROI</button>
+    <button class="tab" onclick="show('inaction',this)">7. Inaction</button>
+    <button class="tab" onclick="show('redteam',this)">8. Red Team</button>
+    <button class="tab" onclick="show('rollout',this)">9. 10-Point Rollout</button>
+    <button class="tab" onclick="show('sources',this)">10. Sources</button>
+    <button class="tab" onclick="show('contact',this)">11. Contact</button>
+  </nav>
+
+  <div class="content">
+
+    <section id="executive" class="page">
+      <div class="head">
+        <div class="eye">◉</div>
+        <div>
+          <h2>EXECUTIVE VIEW</h2>
+          <p>F.R.I.E.N.D. is an AI-enabled operational intelligence and workforce development platform designed to improve associate ownership, frequency of outcomes, operational execution, and measurable performance across the King Soopers Division.</p>
+        </div>
+      </div>
+
+      <div class="kpis">
+        <div class="kpi"><strong>155</strong><span>Division Stores</span></div>
+        <div class="kpi"><strong>3</strong><span>Pilot Stores</span></div>
+        <div class="kpi"><strong>$3M+</strong><span>Projected Annual Impact</span></div>
+        <div class="kpi"><strong>12–24</strong><span>Month Roadmap</span></div>
+        <div class="kpi"><strong>90%+</strong><span>Training Completion Goal</span></div>
+        <div class="kpi"><strong>ROI</strong><span>Long-Term Value</span></div>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Strategic Impact Areas</h3>
+          <div class="body impact">
+            <div class="impact-item"><div class="icon">A</div><div><b>Associate Ownership</b><br>Improves clarity, routine, and accountability.</div></div>
+            <div class="impact-item"><div class="icon red">L</div><div><b>Leadership Development</b><br>Supports coaching and execution rhythm.</div></div>
+            <div class="impact-item"><div class="icon green">O</div><div><b>Operational Excellence</b><br>Connects tasks, standards, and follow-through.</div></div>
+            <div class="impact-item"><div class="icon orange">R</div><div><b>ROI and Cost Avoidance</b><br>Targets waste, shrink, and time loss.</div></div>
+            <div class="impact-item"><div class="icon purple">C</div><div><b>Customer Experience</b><br>Improves consistency and service readiness.</div></div>
+            <div class="impact-item"><div class="icon yellow">D</div><div><b>Data Intelligence</b><br>Creates visibility for better decisions.</div></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Rollout Journey</h3>
+          <div class="body journey">
+            <div class="step"><b>1</b>Pre-Pilot<br>readiness</div>
+            <div class="step"><b>2</b>Pilot Program<br>3 stores</div>
+            <div class="step"><b>3</b>Regional<br>20–30 stores</div>
+            <div class="step"><b>4</b>Division<br>rollout</div>
+            <div class="step"><b>5</b>Continuous<br>improvement</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Expected Outcomes</h3>
+          <div class="body">
+            <div class="outcome"><div class="icon green">↗</div><div><b>Improved Performance</b><br>Higher execution consistency.</div></div>
+            <div class="outcome"><div class="icon">⏱</div><div><b>Time Savings</b><br>Leaders spend less time searching, more time coaching.</div></div>
+            <div class="outcome"><div class="icon yellow">$</div><div><b>Cost Savings</b><br>Reduced shrink and avoidable losses.</div></div>
+            <div class="outcome"><div class="icon red">★</div><div><b>Stronger Culture</b><br>Ownership and clarity increase.</div></div>
+            <div class="outcome"><div class="icon purple">◆</div><div><b>Sustainable Growth</b><br>Improvement becomes repeatable.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="note">F.R.I.E.N.D. is more than a tool — it is a strategic advantage for the King Soopers Division.</div>
+      <div class="footer">By integrating intelligence, people, and process, we create the foundation for stronger stores, stronger leaders, and stronger results.</div>
+    </section>
+
+    <section id="prepilot" class="page" style="display:none"><div class="head"><div class="eye">1</div><div><h2>PRE-PILOT</h2><p>Define scope, ownership, readiness, pilot stores, success metrics, and risk points before launch.</p></div></div><div class="grid"><div class="card"><h3>Framework</h3><div class="body">Select low, medium, and high-volume pilot stores. Map current execution gaps, communication gaps, training gaps, and leadership reporting needs.</div></div><div class="card"><h3>Readiness</h3><div class="body">Confirm device access, reporting structure, department leader involvement, store leadership alignment, and weekly review cadence.</div></div><div class="card"><h3>Output</h3><div class="body">A clean pilot charter with success metrics, owner list, timeline, and measurable expectations.</div></div></div></section>
+
+    <section id="cost" class="page" style="display:none"><div class="head"><div class="eye">2</div><div><h2>PRE-PILOT COST</h2><p>Estimate the investment required before testing.</p></div></div><div class="grid"><div class="card"><h3>Technology</h3><div class="body">Device readiness, TC-52/Zebra access, dashboards, data templates, and technical support.</div></div><div class="card"><h3>Labor</h3><div class="body">Training preparation, leadership review time, pilot support, reporting setup, and implementation meetings.</div></div><div class="card"><h3>Controls</h3><div class="body">Cost should be staged and measured against operational improvement during the pilot.</div></div></div></section>
+
+    <section id="pilot" class="page" style="display:none"><div class="head"><div class="eye">3</div><div><h2>PILOT PROGRAM</h2><p>Test across three stores for 3–6 months.</p></div></div><div class="kpis"><div class="kpi"><strong>Low</strong><span>Volume</span></div><div class="kpi"><strong>Med</strong><span>Volume</span></div><div class="kpi"><strong>High</strong><span>Volume</span></div><div class="kpi"><strong>90–180</strong><span>Days</span></div><div class="kpi"><strong>Weekly</strong><span>Reviews</span></div><div class="kpi"><strong>Data</strong><span>Driven</span></div></div><div class="card"><h3>Pilot Goal</h3><div class="body">Measure adoption, task completion, training speed, shrink awareness, department execution, leadership usefulness, and associate experience.</div></div></section>
+
+    <section id="regional" class="page" style="display:none"><div class="head"><div class="eye">4</div><div><h2>REGIONAL ROLLOUT</h2><p>Scale to 20–30 stores after pilot validation.</p></div></div><div class="card"><h3>Regional Purpose</h3><div class="body">Validate support model, training cadence, store adaptation, leadership routines, and technology reliability across a larger store group.</div></div></section>
+
+    <section id="division" class="page" style="display:none"><div class="head"><div class="eye">5</div><div><h2>DIVISION ROLLOUT</h2><p>Prepare full King Soopers Division deployment.</p></div></div><div class="card"><h3>Division Goal</h3><div class="body">Use pilot and regional learning to create a scalable, repeatable operating system across all 155 stores.</div></div></section>
+
+    <section id="roi" class="page" style="display:none"><div class="head"><div class="eye">6</div><div><h2>ROI ANALYSIS</h2><p>Measure value through operational improvement.</p></div></div><div class="grid"><div class="card"><h3>ROI Drivers</h3><div class="body">Labor clarity, shrink reduction, training speed, task completion, compliance, and leadership visibility.</div></div><div class="card"><h3>Measurement</h3><div class="body">Compare pilot costs against measurable gains and hidden loss reduction.</div></div><div class="card"><h3>Long-Term Value</h3><div class="body">Create a repeatable improvement engine across the division.</div></div></div></section>
+
+    <section id="inaction" class="page" style="display:none"><div class="head"><div class="eye">7</div><div><h2>COST OF INACTION</h2><p>Hidden losses continue when systems remain disconnected.</p></div></div><div class="card"><h3>Risk</h3><div class="body">Inconsistent task execution, training gaps, preventable shrink, missed communication, leadership blind spots, and lost time.</div></div></section>
+
+    <section id="redteam" class="page" style="display:none"><div class="head"><div class="eye">8</div><div><h2>RED TEAM REVIEW</h2><p>Challenge the proposal before scaling it.</p></div></div><div class="card"><h3>Risk Review</h3><div class="body">Adoption resistance, unclear ownership, device friction, over-complexity, data overload, and training fatigue must be addressed before division rollout.</div></div></section>
+
+    <section id="rollout" class="page" style="display:none"><div class="head"><div class="eye">9</div><div><h2>10-POINT ROLLOUT PLAN</h2><p>One plan. One standard. One vision.</p></div></div><div class="body journey"><div class="step"><b>1</b>Define ownership</div><div class="step"><b>2</b>Select pilot stores</div><div class="step"><b>3</b>Prepare devices</div><div class="step"><b>4</b>Train leaders</div><div class="step"><b>5</b>Launch pilot</div></div></section>
+
+    <section id="sources" class="page" style="display:none"><div class="head"><div class="eye">10</div><div><h2>SOURCES</h2><p>Source and reference library.</p></div></div><div class="card"><h3>References</h3><div class="body">Active source links will be added here in the next block.</div></div></section>
+
+    <section id="contact" class="page" style="display:none"><div class="head"><div class="eye">11</div><div><h2>CONTACT</h2><p>Proposal owner.</p></div></div><div class="card"><h3>Zachariah Rhett</h3><div class="body">Zachariah.rhett@stores.kingsoopers.com<br>(303) 729-4161</div></div></section>
+
+  </div>
+</main>
+</div>
+</div>
+
+<script>
+function show(id,btn){
+  document.querySelectorAll('.page').forEach(p=>p.style.display='none');
+  document.getElementById(id).style.display='block';
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  btn.classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+</script>
+
+</body>
+</html>
