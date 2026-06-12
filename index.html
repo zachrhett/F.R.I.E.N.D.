@@ -122,12 +122,13 @@ body{
 
 .tabs{
   display:flex;
-  gap:7px;
+  gap:5px;
   align-items:center;
-  padding:11px 13px;
+  padding:8px 10px;
   background:white;
   border-bottom:1px solid #dce3ef;
-  overflow:hidden;
+  overflow-x:auto;
+overflow-x:hidden;
 }
 
 .tabs button{
@@ -135,11 +136,12 @@ body{
   background:white;
   color:#002b6c;
   font-weight:900;
-  padding:10px 12px;
+  padding:8px 10px;
   border-radius:8px;
   white-space:nowrap;
   cursor:pointer;
-  font-size:11px;
+  font-size:10px;
+  flex-shrink:0;
 }
 
 .tabs button.active{
