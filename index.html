@@ -1,28 +1,190 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>F.R.I.E.N.D. Proposal</title>
 
 <style>
-body{
-    margin:0;
-    background:white;
-}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Arial,Helvetica,sans-serif;background:#f4f7fb;color:#111}
+.page{display:flex;min-height:100vh}
+.sidebar{width:250px;background:#002b6c;color:white;padding:24px 20px}
+.logo{background:#d71920;color:white;font-weight:900;font-size:36px;line-height:.9;padding:12px;border-radius:6px;margin-bottom:28px}
+.logo span{color:#ffd200;font-style:italic}
+.side-title{font-size:28px;font-weight:900;letter-spacing:2px;margin-bottom:14px}
+.line{height:3px;background:#ffd200;margin:18px 0}
+.side-copy{color:#ffd200;font-size:17px;line-height:1.55;font-weight:700}
+.side-icons{margin-top:70px}
+.side-icons div{margin:22px 0;font-size:16px}
 
-img{
-    width:100%;
-    height:auto;
-    display:block;
+.main{flex:1;background:white}
+.header{background:linear-gradient(90deg,#001f5b,#002b6c,#001a44);color:white;padding:24px 36px}
+.header h1{font-size:48px;margin-bottom:8px}
+.header p{font-size:18px;line-height:1.6;max-width:900px}
+.yellow{color:#ffd200;font-weight:800}
+
+.nav{display:flex;gap:10px;padding:18px;background:white;border-bottom:1px solid #ddd;overflow-x:auto}
+.nav a{padding:13px 18px;border-radius:10px;border:1px solid #ddd;text-decoration:none;color:#002b6c;font-weight:800;white-space:nowrap}
+.nav a.active{background:#002b6c;color:white}
+
+.content{padding:22px}
+.grid-top{display:grid;grid-template-columns:2fr repeat(6,1fr);gap:12px}
+.card{background:white;border:1px solid #e1e5ee;border-radius:14px;padding:22px;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.card h2{color:#002b6c;font-size:30px;margin-bottom:14px}
+.card p{line-height:1.6;font-size:16px}
+.metric{text-align:center}
+.metric .icon{font-size:36px;margin-bottom:10px}
+.metric h3{font-size:32px;color:#002b6c}
+.metric b{display:block;margin:8px 0}
+.metric p{font-size:14px}
+
+.mid{display:grid;grid-template-columns:1.1fr 1.1fr .9fr;gap:14px;margin-top:14px}
+.section-title{text-align:center;color:#002b6c;font-size:20px;font-weight:900;margin-bottom:16px}
+.impact{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.mini{border:1px solid #e5e7ef;border-radius:12px;padding:15px}
+.mini h4{margin-bottom:8px}
+.mini p{font-size:14px;line-height:1.5}
+.journey{display:flex;justify-content:space-between;text-align:center;gap:8px}
+.step .circle{width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:26px;font-weight:900;margin:auto auto 8px}
+.blue{background:#003f9e}.red{background:#d71920}.green{background:#2ca02c}.orange{background:#f5a000}.purple{background:#7a1f93}
+.step b{display:block;color:#002b6c}
+.step p{font-size:13px;line-height:1.35}
+.outcome{display:grid;gap:10px}
+.outcome div{border:1px solid #e5e7ef;border-radius:12px;padding:14px;font-weight:800}
+.different{margin-top:14px}
+.checks{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+.checks div{font-size:14px}
+.bottom{margin-top:18px;background:#fff3cd;border:1px solid #ffe08a;border-radius:12px;padding:22px;display:flex;gap:18px;align-items:center}
+.star{font-size:46px;color:#f5a000}
+.bottom h2{font-size:24px}
+
+@media(max-width:1100px){
+.page{display:block}
+.sidebar{width:100%}
+.grid-top{grid-template-columns:1fr 1fr}
+.card:first-child{grid-column:1/-1}
+.mid{grid-template-columns:1fr}
 }
 </style>
-
 </head>
 
 <body>
+<div class="page">
 
-<img src="screen%201.png">
+<aside class="sidebar">
+  <div class="logo">KING<br><span>Soopers</span></div>
+  <div class="side-title">F.R.I.E.N.D.<br>Proposal</div>
+  <div class="line"></div>
+  <div class="side-copy">
+    Full Retail Integration Engaged Network Dynamics — a King Soopers Division proposal for retail intelligence, operational execution, training integration, leadership development, cost avoidance, ROI growth, and scalable decision support.
+  </div>
+  <div class="side-icons">
+    <div>📊 Data Driven</div>
+    <div>👥 People Focused</div>
+    <div>🎯 Performance Oriented</div>
+    <div>💡 Future Ready</div>
+  </div>
+</aside>
 
+<main class="main">
+
+<header class="header">
+  <h1>F.R.I.E.N.D. Proposal</h1>
+  <p><span class="yellow">Full Retail Integration Engaged Network Dynamics</span> — a King Soopers Division proposal for retail intelligence, operational execution, training integration, leadership development, cost avoidance, ROI growth, and scalable decision support.</p>
+</header>
+
+<nav class="nav">
+  <a class="active" href="index.html">Executive View</a>
+  <a href="#">1. Pre-Pilot</a>
+  <a href="#">2. Pre-Pilot Cost</a>
+  <a href="#">3. Pilot Program</a>
+  <a href="#">4. Regional Rollout</a>
+  <a href="#">5. Division Rollout</a>
+  <a href="#">6. ROI</a>
+  <a href="#">7. Inaction</a>
+  <a href="#">8. Red Team</a>
+  <a href="#">9. 10 Point Rollout</a>
+  <a href="#">10. Sources</a>
+  <a href="#">11. Thank You</a>
+</nav>
+
+<section class="content">
+
+<div class="grid-top">
+  <div class="card">
+    <h2>👁 EXECUTIVE VIEW</h2>
+    <p>F.R.I.E.N.D. is an AI-assisted operational intelligence and workforce development platform designed to improve associate onboarding, leadership effectiveness, operational execution, and division-wide performance across the King Soopers Division.</p>
+  </div>
+
+  <div class="card metric"><div class="icon">🏬</div><h3>155</h3><b>Division Stores</b><p>Full-scale operating environment</p></div>
+  <div class="card metric"><div class="icon">👥</div><h3>3</h3><b>Pilot Stores</b><p>Low, medium, and high-volume test</p></div>
+  <div class="card metric"><div class="icon">📈</div><h3>$3M+</h3><b>Projected Annual Impact</b><p>Labor, training, and execution gains</p></div>
+  <div class="card metric"><div class="icon">🕒</div><h3>12-24</h3><b>Months</b><p>Payback period</p></div>
+  <div class="card metric"><div class="icon">🎓</div><h3>90%+</h3><b>Training Goal</b><p>Completion and rollout achievement</p></div>
+  <div class="card metric"><div class="icon">💲</div><h3>ROI</h3><b>Strong</b><p>Long-term scalable return</p></div>
+</div>
+
+<div class="mid">
+
+  <div class="card">
+    <div class="section-title">STRATEGIC IMPACT AREAS</div>
+    <div class="impact">
+      <div class="mini"><h4>👥 Associate Development</h4><p>Builds a stronger, more consistent workforce across all stores.</p></div>
+      <div class="mini"><h4>🧑‍💼 Leadership Effectiveness</h4><p>Empowers leaders with tools and actionable insights.</p></div>
+      <div class="mini"><h4>🛡 Cost Avoidance</h4><p>Reduces waste, errors, and unnecessary spend.</p></div>
+      <div class="mini"><h4>💰 ROI Growth</h4><p>Delivers measurable, sustainable, actionable decisions.</p></div>
+      <div class="mini"><h4>📊 Data-Driven Decisions</h4><p>Transforms data into clarity and action.</p></div>
+      <div class="mini"><h4>⚙ Operational Excellence</h4><p>Improves execution, accountability, and performance.</p></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="section-title">ROLLOUT JOURNEY</div>
+    <div class="journey">
+      <div class="step"><div class="circle blue">1</div><b>Pre-Pilot</b><p>Define scope, select stores, align goals.</p></div>
+      <div class="step"><div class="circle red">2</div><b>Pilot Program</b><p>Test, validate, and refine solution.</p></div>
+      <div class="step"><div class="circle green">3</div><b>Regional Rollout</b><p>Expand with measured support.</p></div>
+      <div class="step"><div class="circle orange">4</div><b>Division Rollout</b><p>Full deployment with training and tools.</p></div>
+      <div class="step"><div class="circle purple">5</div><b>Continuous Improvement</b><p>Optimize and evolve.</p></div>
+    </div>
+
+    <div class="different">
+      <div class="section-title">BUILT MADE F.R.I.E.N.D. DIFFERENT</div>
+      <div class="checks">
+        <div>✅ AI-assisted insights for smarter decisions</div>
+        <div>✅ Scalable solution for the division</div>
+        <div>✅ Designed by retail operators for retail</div>
+        <div>✅ Built to improve on day one</div>
+        <div>✅ Connected data for better visibility</div>
+        <div>✅ Long-term value with proven ROI</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="section-title">EXPECTED OUTCOMES</div>
+    <div class="outcome">
+      <div>📈 Improved Performance</div>
+      <div>🕒 Time Savings</div>
+      <div>💵 Cost Savings</div>
+      <div>👥 Stronger Culture</div>
+      <div>📊 Sustainable Growth</div>
+    </div>
+  </div>
+
+</div>
+
+<div class="bottom">
+  <div class="star">★</div>
+  <div>
+    <h2>F.R.I.E.N.D. is more than a tool — it’s a strategic advantage for the King Soopers Division.</h2>
+    <p>By integrating intelligence, people, and process, we create the foundation for stronger stores, stronger leaders, and stronger results.</p>
+  </div>
+</div>
+
+</section>
+</main>
+</div>
 </body>
 </html>
