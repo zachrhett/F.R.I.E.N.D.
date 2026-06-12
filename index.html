@@ -1,0 +1,1293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>F.R.I.E.N.D. Proposal | King Soopers Division</title>
+
+<style>
+:root{
+  --ks-blue:#002f6c;
+  --ks-blue-2:#001b44;
+  --ks-blue-3:#004b93;
+  --ks-red:#d71920;
+  --ks-yellow:#ffd23c;
+  --ks-green:#1f7a35;
+  --ks-orange:#f28c00;
+  --ks-purple:#6b2c91;
+  --ks-white:#ffffff;
+  --ks-bg:#f4f7fb;
+  --ks-border:#d9e2ef;
+  --ks-text:#081b3f;
+  --ks-muted:#51627a;
+  --shadow:0 8px 24px rgba(0,31,84,.12);
+  --soft-shadow:0 3px 10px rgba(0,31,84,.08);
+  --radius:14px;
+}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Arial, Helvetica, sans-serif;
+  background:var(--ks-bg);
+  color:var(--ks-text);
+  line-height:1.45;
+}
+
+button,
+a{
+  font-family:inherit;
+}
+
+.app{
+  min-height:100vh;
+  display:grid;
+  grid-template-columns:260px 1fr;
+}
+
+/* =========================
+   LEFT SIDEBAR
+========================= */
+
+.sidebar{
+  background:linear-gradient(180deg,#003c8f 0%,#001b44 100%);
+  color:white;
+  padding:18px 22px;
+  position:sticky;
+  top:0;
+  height:100vh;
+  overflow:auto;
+  box-shadow:8px 0 30px rgba(0,0,0,.18);
+  z-index:50;
+}
+
+.logo-box{
+  background:var(--ks-red);
+  border:2px solid white;
+  border-radius:6px;
+  height:132px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  margin-bottom:26px;
+  box-shadow:var(--shadow);
+}
+
+.logo-main{
+  font-size:3.3rem;
+  font-weight:900;
+  line-height:.85;
+  letter-spacing:-2px;
+}
+
+.logo-script{
+  color:var(--ks-yellow);
+  font-size:2.2rem;
+  font-weight:900;
+  font-style:italic;
+  margin-top:4px;
+}
+
+.sidebar h1{
+  font-size:2.05rem;
+  line-height:1.15;
+  margin-bottom:18px;
+  letter-spacing:1px;
+}
+
+.gold-line{
+  height:2px;
+  background:var(--ks-yellow);
+  opacity:.8;
+  margin:20px 0;
+}
+
+.sidebar-copy{
+  color:var(--ks-yellow);
+  font-weight:800;
+  font-size:1rem;
+  line-height:1.55;
+}
+
+.value-list{
+  margin-top:26px;
+  display:grid;
+  gap:22px;
+}
+
+.value-item{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  font-size:1rem;
+  font-weight:700;
+}
+
+.value-icon{
+  width:34px;
+  height:34px;
+  border:2px solid white;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  font-size:1rem;
+}
+
+.sidebar-footer{
+  margin-top:36px;
+  font-size:.85rem;
+  color:#dce8ff;
+}
+
+/* =========================
+   MAIN SHELL
+========================= */
+
+.main{
+  min-width:0;
+}
+
+.top-hero{
+  background:
+    radial-gradient(circle at 82% 22%,rgba(0,173,255,.45),transparent 28%),
+    linear-gradient(100deg,var(--ks-blue-2),var(--ks-blue));
+  color:white;
+  min-height:170px;
+  padding:28px 38px;
+  display:grid;
+  grid-template-columns:1fr 330px;
+  gap:22px;
+  align-items:center;
+  border-bottom:1px solid rgba(255,255,255,.15);
+}
+
+.hero-title{
+  font-size:2.85rem;
+  font-weight:900;
+  letter-spacing:5px;
+  line-height:1;
+  margin-bottom:12px;
+}
+
+.hero-sub{
+  color:var(--ks-yellow);
+  font-size:1.08rem;
+  font-weight:900;
+  max-width:980px;
+}
+
+.hero-copy{
+  color:white;
+  font-size:1rem;
+  font-weight:700;
+  max-width:980px;
+  margin-top:5px;
+}
+
+.hero-art{
+  min-height:110px;
+  border-radius:18px;
+  background:
+    linear-gradient(135deg,rgba(0,174,255,.12),rgba(255,255,255,.03)),
+    repeating-linear-gradient(45deg,rgba(255,255,255,.06) 0 1px,transparent 1px 18px);
+  border:1px solid rgba(255,255,255,.18);
+  display:grid;
+  place-items:center;
+  color:#79d8ff;
+  font-size:4rem;
+  position:relative;
+  overflow:hidden;
+}
+
+.hero-art::before,
+.hero-art::after{
+  content:"";
+  position:absolute;
+  border-radius:50%;
+  background:rgba(0,174,255,.3);
+  filter:blur(18px);
+}
+
+.hero-art::before{
+  width:110px;
+  height:110px;
+  right:28px;
+  top:12px;
+}
+
+.hero-art::after{
+  width:70px;
+  height:70px;
+  left:36px;
+  bottom:8px;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.tabs-wrap{
+  background:white;
+  padding:18px 28px;
+  border-bottom:1px solid var(--ks-border);
+  position:sticky;
+  top:0;
+  z-index:40;
+  box-shadow:var(--soft-shadow);
+}
+
+.tabs{
+  display:flex;
+  gap:10px;
+  overflow-x:auto;
+  padding-bottom:4px;
+}
+
+.tab{
+  white-space:nowrap;
+  border:1px solid var(--ks-border);
+  background:white;
+  color:var(--ks-blue);
+  font-weight:900;
+  padding:13px 18px;
+  border-radius:11px;
+  cursor:pointer;
+  transition:.2s ease;
+  font-size:.85rem;
+}
+
+.tab:hover{
+  transform:translateY(-1px);
+  box-shadow:var(--soft-shadow);
+}
+
+.tab.active{
+  background:linear-gradient(180deg,#004a9f,#002f6c);
+  color:white;
+  border-color:var(--ks-blue);
+}
+
+/* =========================
+   PAGE STRUCTURE
+========================= */
+
+.content{
+  padding:24px 28px 42px;
+}
+
+.page{
+  display:none;
+  animation:fadeIn .22s ease;
+}
+
+.page.active{
+  display:block;
+}
+
+@keyframes fadeIn{
+  from{opacity:0; transform:translateY(5px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+.proposal-card{
+  background:white;
+  border:1px solid var(--ks-border);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:20px;
+}
+
+.page-head{
+  display:grid;
+  grid-template-columns:1.1fr 1.2fr;
+  gap:20px;
+  margin-bottom:18px;
+}
+
+.title-row{
+  display:flex;
+  align-items:flex-start;
+  gap:18px;
+}
+
+.big-icon{
+  width:76px;
+  height:76px;
+  min-width:76px;
+  border-radius:50%;
+  border:5px solid var(--ks-blue);
+  display:grid;
+  place-items:center;
+  font-size:2.1rem;
+  color:var(--ks-blue);
+  background:white;
+}
+
+.page-title{
+  font-size:2.3rem;
+  color:var(--ks-blue-2);
+  line-height:1.05;
+  font-weight:900;
+  margin-bottom:12px;
+  text-transform:uppercase;
+}
+
+.page-desc{
+  font-size:.98rem;
+  color:#071f49;
+  max-width:740px;
+}
+
+.panel-title{
+  background:linear-gradient(180deg,#003f93,#00275e);
+  color:white;
+  padding:9px 14px;
+  border-radius:8px 8px 0 0;
+  text-align:center;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:.4px;
+}
+
+.panel{
+  background:white;
+  border:1px solid var(--ks-border);
+  border-radius:10px;
+  box-shadow:var(--soft-shadow);
+  overflow:hidden;
+}
+
+.panel-body{
+  padding:16px;
+}
+
+.glance{
+  display:grid;
+  grid-template-columns:repeat(6,1fr);
+  border:1px solid var(--ks-border);
+  border-radius:12px;
+  overflow:hidden;
+  background:white;
+  box-shadow:var(--soft-shadow);
+}
+
+.glance-item{
+  padding:16px 12px;
+  text-align:center;
+  border-right:1px solid var(--ks-border);
+}
+
+.glance-item:last-child{
+  border-right:0;
+}
+
+.glance-icon{
+  font-size:2rem;
+  color:var(--ks-blue);
+  margin-bottom:7px;
+}
+
+.glance-number{
+  font-size:1.75rem;
+  color:var(--ks-blue);
+  font-weight:900;
+  line-height:1.1;
+}
+
+.glance-label{
+  font-size:.78rem;
+  font-weight:900;
+  color:var(--ks-text);
+}
+
+.glance-small{
+  font-size:.72rem;
+  color:var(--ks-muted);
+  font-weight:700;
+  margin-top:3px;
+}
+
+.grid{
+  display:grid;
+  gap:14px;
+}
+
+.grid.two{
+  grid-template-columns:repeat(2,1fr);
+}
+
+.grid.three{
+  grid-template-columns:repeat(3,1fr);
+}
+
+.grid.four{
+  grid-template-columns:repeat(4,1fr);
+}
+
+.grid.five{
+  grid-template-columns:repeat(5,1fr);
+}
+
+.grid.six{
+  grid-template-columns:repeat(6,1fr);
+}
+
+.section-grid{
+  display:grid;
+  gap:14px;
+  margin-top:14px;
+}
+
+.card{
+  background:white;
+  border:1px solid var(--ks-border);
+  border-radius:10px;
+  padding:15px;
+  box-shadow:var(--soft-shadow);
+}
+
+.mini-card{
+  background:white;
+  border:1px solid var(--ks-border);
+  border-radius:9px;
+  padding:12px;
+}
+
+.card-row{
+  display:flex;
+  align-items:flex-start;
+  gap:12px;
+}
+
+.card-icon{
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  background:var(--ks-blue);
+  color:white;
+  display:grid;
+  place-items:center;
+  font-size:1.3rem;
+  min-width:42px;
+}
+
+.card-icon.red{background:var(--ks-red);}
+.card-icon.green{background:var(--ks-green);}
+.card-icon.yellow{background:#d89b00;}
+.card-icon.orange{background:var(--ks-orange);}
+.card-icon.purple{background:var(--ks-purple);}
+.card-icon.teal{background:#0c7c8c;}
+
+.card h3{
+  color:var(--ks-blue-2);
+  font-size:1rem;
+  margin-bottom:5px;
+}
+
+.card p,
+.card li{
+  font-size:.82rem;
+  color:#071f49;
+}
+
+.card ul{
+  padding-left:18px;
+}
+
+/* =========================
+   TABLES
+========================= */
+
+.table-wrap{
+  overflow:auto;
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+  font-size:.82rem;
+}
+
+th{
+  background:#f2f6fc;
+  color:var(--ks-blue);
+  text-transform:uppercase;
+  font-size:.72rem;
+  padding:10px;
+  border:1px solid var(--ks-border);
+  text-align:left;
+}
+
+td{
+  padding:10px;
+  border:1px solid var(--ks-border);
+  vertical-align:top;
+}
+
+tr.total-row td{
+  background:#fff3c4;
+  font-weight:900;
+  color:var(--ks-blue-2);
+}
+
+.money{
+  color:var(--ks-blue);
+  font-size:1.15rem;
+  font-weight:900;
+}
+
+.good{
+  color:var(--ks-green);
+  font-weight:900;
+}
+
+.bad{
+  color:var(--ks-red);
+  font-weight:900;
+}
+
+.warn{
+  color:var(--ks-orange);
+  font-weight:900;
+}
+
+/* =========================
+   CHARTS / VISUAL BLOCKS
+========================= */
+
+.bar-chart{
+  height:180px;
+  display:flex;
+  align-items:end;
+  justify-content:space-around;
+  gap:16px;
+  padding:16px 12px 8px;
+  border-bottom:2px solid #d9e2ef;
+}
+
+.bar-col{
+  flex:1;
+  max-width:80px;
+  background:linear-gradient(180deg,#004fb6,#001f60);
+  border-radius:6px 6px 0 0;
+  position:relative;
+  min-height:18px;
+}
+
+.bar-col.green{
+  background:linear-gradient(180deg,#25a85a,#0d6b31);
+}
+
+.bar-col.red{
+  background:linear-gradient(180deg,#e22a30,#a91117);
+}
+
+.bar-label{
+  text-align:center;
+  font-weight:900;
+  color:var(--ks-blue);
+  font-size:.78rem;
+  margin-top:8px;
+}
+
+.bar-value{
+  position:absolute;
+  top:-22px;
+  left:50%;
+  transform:translateX(-50%);
+  color:var(--ks-blue);
+  font-weight:900;
+  font-size:.78rem;
+  white-space:nowrap;
+}
+
+.progress-row{
+  margin:10px 0;
+}
+
+.progress-label{
+  display:flex;
+  justify-content:space-between;
+  font-weight:900;
+  color:var(--ks-blue-2);
+  font-size:.82rem;
+  margin-bottom:5px;
+}
+
+.track{
+  height:11px;
+  background:#e3eaf4;
+  border-radius:999px;
+  overflow:hidden;
+}
+
+.fill{
+  height:100%;
+  background:linear-gradient(90deg,var(--ks-blue),#0f72d9);
+  border-radius:999px;
+}
+
+.fill.green{
+  background:linear-gradient(90deg,#0d7a35,#35b85c);
+}
+
+.fill.red{
+  background:linear-gradient(90deg,#b5121b,#e5353d);
+}
+
+.timeline{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:10px;
+}
+
+.time-step{
+  flex:1;
+  text-align:center;
+  position:relative;
+}
+
+.time-step:not(:last-child)::after{
+  content:"→";
+  position:absolute;
+  right:-12px;
+  top:24px;
+  color:#8393a9;
+  font-size:1.3rem;
+  font-weight:900;
+}
+
+.time-dot{
+  width:56px;
+  height:56px;
+  margin:0 auto 9px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  color:white;
+  font-size:1.35rem;
+  font-weight:900;
+}
+
+.time-dot.blue{background:var(--ks-blue);}
+.time-dot.red{background:var(--ks-red);}
+.time-dot.green{background:var(--ks-green);}
+.time-dot.yellow{background:#d89b00;}
+.time-dot.purple{background:var(--ks-purple);}
+.time-dot.orange{background:var(--ks-orange);}
+
+.time-step h4{
+  font-size:.82rem;
+  color:var(--ks-blue-2);
+  margin-bottom:3px;
+}
+
+.time-step p{
+  font-size:.72rem;
+  color:var(--ks-muted);
+}
+
+/* =========================
+   CALLOUTS
+========================= */
+
+.gold-callout{
+  background:linear-gradient(90deg,#fff6d5,#fffdf6);
+  border:1px solid #ecd27a;
+  border-radius:12px;
+  padding:20px;
+  display:flex;
+  align-items:center;
+  gap:18px;
+  box-shadow:var(--soft-shadow);
+  margin-top:16px;
+}
+
+.gold-star{
+  font-size:2.3rem;
+  color:#dfa900;
+}
+
+.gold-callout h3{
+  color:var(--ks-blue-2);
+  font-size:1.25rem;
+  margin-bottom:4px;
+}
+
+.gold-callout p{
+  color:#172b4d;
+}
+
+.recommendation{
+  background:#fff7db;
+  border:1px solid #ecd27a;
+  border-radius:12px;
+  padding:20px;
+}
+
+.recommendation h3{
+  color:var(--ks-blue-2);
+  margin-bottom:10px;
+  font-size:1.25rem;
+}
+
+.big-quote{
+  background:linear-gradient(90deg,var(--ks-blue-2),var(--ks-blue));
+  color:white;
+  border-radius:10px;
+  padding:16px 22px;
+  font-style:italic;
+  font-size:1.05rem;
+  margin:14px 0;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer{
+  background:var(--ks-blue-2);
+  color:white;
+  padding:16px 28px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  font-size:.85rem;
+  border-top:4px solid var(--ks-yellow);
+}
+
+.footer strong{
+  color:white;
+  letter-spacing:1px;
+}
+
+.footer span{
+  color:var(--ks-yellow);
+  font-weight:900;
+}
+
+/* =========================
+   PRINT BUTTON
+========================= */
+
+.print-btn{
+  position:fixed;
+  right:18px;
+  bottom:18px;
+  z-index:100;
+  border:0;
+  background:var(--ks-red);
+  color:white;
+  padding:13px 18px;
+  border-radius:999px;
+  font-weight:900;
+  box-shadow:var(--shadow);
+  cursor:pointer;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:1100px){
+  .app{
+    grid-template-columns:1fr;
+  }
+
+  .sidebar{
+    position:relative;
+    height:auto;
+    display:grid;
+    grid-template-columns:160px 1fr;
+    gap:18px;
+  }
+
+  .logo-box{
+    height:105px;
+    margin-bottom:0;
+  }
+
+  .logo-main{
+    font-size:2.3rem;
+  }
+
+  .logo-script{
+    font-size:1.5rem;
+  }
+
+  .sidebar h1{
+    font-size:1.6rem;
+  }
+
+  .value-list,
+  .gold-line:nth-of-type(2),
+  .sidebar-footer{
+    display:none;
+  }
+
+  .top-hero{
+    grid-template-columns:1fr;
+  }
+
+  .hero-art{
+    display:none;
+  }
+
+  .page-head{
+    grid-template-columns:1fr;
+  }
+
+  .glance{
+    grid-template-columns:repeat(3,1fr);
+  }
+
+  .grid.three,
+  .grid.four,
+  .grid.five,
+  .grid.six{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media(max-width:700px){
+  .content,
+  .tabs-wrap,
+  .top-hero{
+    padding-left:14px;
+    padding-right:14px;
+  }
+
+  .hero-title{
+    font-size:2rem;
+  }
+
+  .sidebar{
+    grid-template-columns:1fr;
+  }
+
+  .sidebar-copy{
+    font-size:.9rem;
+  }
+
+  .page-title{
+    font-size:1.65rem;
+  }
+
+  .title-row{
+    flex-direction:column;
+  }
+
+  .glance{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .grid.two,
+  .grid.three,
+  .grid.four,
+  .grid.five,
+  .grid.six{
+    grid-template-columns:1fr;
+  }
+
+  .timeline{
+    display:grid;
+    grid-template-columns:1fr;
+  }
+
+  .time-step:not(:last-child)::after{
+    display:none;
+  }
+
+  .footer{
+    flex-direction:column;
+    text-align:center;
+  }
+}
+
+@media print{
+  .sidebar,
+  .tabs-wrap,
+  .print-btn{
+    display:none;
+  }
+
+  .app{
+    display:block;
+  }
+
+  .page{
+    display:block !important;
+    page-break-after:always;
+  }
+
+  .top-hero{
+    page-break-after:avoid;
+  }
+
+  body{
+    background:white;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<button class="print-btn" onclick="window.print()">Print / Save PDF</button>
+
+<div class="app">
+
+  <aside class="sidebar">
+    <div>
+      <div class="logo-box">
+        <div class="logo-main">KING</div>
+        <div class="logo-script">Soopers</div>
+      </div>
+    </div>
+
+    <div>
+      <h1>F.R.I.E.N.D.<br>Proposal</h1>
+      <div class="gold-line"></div>
+
+      <p class="sidebar-copy">
+        Full Retail Integration Engaged Network Dynamics — a King Soopers Division proposal for
+        retail intelligence, operational execution, training integration, leadership development,
+        cost avoidance, ROI growth, and scalable decision support.
+      </p>
+
+      <div class="gold-line"></div>
+
+      <div class="value-list">
+        <div class="value-item">
+          <div class="value-icon">↗</div>
+          <span>Data Driven</span>
+        </div>
+
+        <div class="value-item">
+          <div class="value-icon">👥</div>
+          <span>People Focused</span>
+        </div>
+
+        <div class="value-item">
+          <div class="value-icon">◎</div>
+          <span>Performance Oriented</span>
+        </div>
+
+        <div class="value-item">
+          <div class="value-icon">💡</div>
+          <span>Future Ready</span>
+        </div>
+
+        <div class="value-item">
+          <div class="value-icon">🤝</div>
+          <span>Stronger Together</span>
+        </div>
+      </div>
+
+      <div class="sidebar-footer">
+        F.R.I.E.N.D. is built to anticipate challenges, adapt quickly, and deliver measurable results.
+      </div>
+    </div>
+  </aside>
+
+  <main class="main">
+
+    <header class="top-hero">
+      <div>
+        <div class="hero-title">F.R.I.E.N.D. Proposal</div>
+        <div class="hero-sub">
+          Full Retail Integration Engaged Network Dynamics — a King Soopers Division proposal for
+        </div>
+        <div class="hero-copy">
+          retail intelligence, operational execution, training integration, leadership development,
+          cost avoidance, ROI growth, and scalable decision support.
+        </div>
+      </div>
+
+      <div class="hero-art">🛒</div>
+    </header>
+
+    <div class="tabs-wrap">
+      <nav class="tabs">
+        <button class="tab active" data-page="executive">Executive View</button>
+        <button class="tab" data-page="prepilot">1. Pre-Pilot</button>
+        <button class="tab" data-page="prepilotcost">2. Pre-Pilot Cost</button>
+        <button class="tab" data-page="pilot">3. Pilot Program</button>
+        <button class="tab" data-page="regional">4. Regional Rollout</button>
+        <button class="tab" data-page="division">5. Division Rollout</button>
+        <button class="tab" data-page="roi">6. ROI</button>
+        <button class="tab" data-page="inaction">7. Inaction</button>
+        <button class="tab" data-page="redteam">8. Red Team</button>
+        <button class="tab" data-page="rollout">9. 10 Point Rollout</button>
+        <button class="tab" data-page="sources">10. Sources</button>
+        <button class="tab" data-page="charts">11. Charts & Visuals</button>
+        <button class="tab" data-page="thankyou">12. Thank You</button>
+      </nav>
+    </div>
+
+    <section class="content">
+
+      <!-- =========================================================
+           PAGE 1: EXECUTIVE VIEW
+      ========================================================== -->
+
+      <article class="page active" id="executive">
+        <div class="proposal-card">
+
+          <div class="page-head">
+            <div>
+              <div class="title-row">
+                <div class="big-icon">👁</div>
+                <div>
+                  <h2 class="page-title">Executive View</h2>
+                  <p class="page-desc">
+                    F.R.I.E.N.D. is an AI-assisted operational intelligence and workforce development
+                    platform designed to improve associate onboarding, leadership effectiveness,
+                    operational execution, and division-wide performance across the King Soopers Division.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="glance">
+              <div class="glance-item">
+                <div class="glance-icon">🏬</div>
+                <div class="glance-number">155</div>
+                <div class="glance-label">Division Stores</div>
+                <div class="glance-small">Full-scale operating environment</div>
+              </div>
+
+              <div class="glance-item">
+                <div class="glance-icon" style="color:#d71920;">👥</div>
+                <div class="glance-number" style="color:#d71920;">3</div>
+                <div class="glance-label">Pilot Stores</div>
+                <div class="glance-small">Low, medium, and high-volume test</div>
+              </div>
+
+              <div class="glance-item">
+                <div class="glance-icon" style="color:#1f7a35;">📈</div>
+                <div class="glance-number" style="color:#1f7a35;">$3M+</div>
+                <div class="glance-label">Projected Annual Impact</div>
+                <div class="glance-small">Modeled from shrink, labor, training, and execution gains</div>
+              </div>
+
+              <div class="glance-item">
+                <div class="glance-icon" style="color:#d89b00;">⏱</div>
+                <div class="glance-number" style="color:#d89b00;">12–24</div>
+                <div class="glance-label">Months Payback</div>
+                <div class="glance-small">Dependent on scope, adoption, and investment</div>
+              </div>
+
+              <div class="glance-item">
+                <div class="glance-icon">🎓</div>
+                <div class="glance-number">90%+</div>
+                <div class="glance-label">Training Goal</div>
+                <div class="glance-small">Target across pilot and rollout phases</div>
+              </div>
+
+              <div class="glance-item">
+                <div class="glance-icon" style="color:#6b2c91;">$</div>
+                <div class="glance-number" style="color:#6b2c91;">ROI</div>
+                <div class="glance-label">Strong Return</div>
+                <div class="glance-small">Sustainable value creation for the division</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="section-grid" style="grid-template-columns:1fr 1fr 1fr;">
+            <div class="panel">
+              <div class="panel-title">Strategic Impact Areas</div>
+              <div class="panel-body grid two">
+
+                <div class="card">
+                  <div class="card-row">
+                    <div class="card-icon">👥</div>
+                    <div>
+                      <h3>Associate Development</h3>
+                      <p>Guided training, onboarding support, and continuous skill development.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card">
+                  <div class="card-row">
+                    <div class="card-icon red">👤</div>
+                    <div>
+                      <h3>Leadership Effectiveness</h3>
+                      <p>Empowers leaders with real-time insights and actionable guidance.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card">
+                  <div class="card-row">
+                    <div class="card-icon green">⚙</div>
+                    <div>
+                      <h3>Operational Excellence</h3>
+                      <p>Standardized execution, improved task completion, and stronger accountability.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card">
+                  <div class="card-row">
+                    <div class="card-icon yellow">🛡</div>
+                    <div>
+                      <h3>Shrink Reduction</h3>
+                      <p>Data-driven alerts and process discipline reduce loss and waste.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card">
+                  <div class="card-row">
+                    <div class="card-icon purple">🛒</div>
+                    <div>
+                      <h3>Customer Experience</h3>
+                      <p>Better availability, cleaner stores, and faster service recovery.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card">
+                  <div class="card-row">
+                    <div class="card-icon teal">📊</div>
+                    <div>
+                      <h3>Data Intelligence</h3>
+                      <p>Centralized dashboards deliver visibility that drives better decisions.</p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="panel">
+              <div class="panel-title">Rollout Journey</div>
+              <div class="panel-body">
+                <div class="timeline">
+                  <div class="time-step">
+                    <div class="time-dot blue">1</div>
+                    <h4>Pre-Pilot</h4>
+                    <p>Validate strategy, define success, prepare technology.</p>
+                  </div>
+                  <div class="time-step">
+                    <div class="time-dot red">2</div>
+                    <h4>Pilot Program</h4>
+                    <p>Test in 3 stores and refine.</p>
+                  </div>
+                  <div class="time-step">
+                    <div class="time-dot green">3</div>
+                    <h4>Regional Rollout</h4>
+                    <p>Expand to 20–30 stores.</p>
+                  </div>
+                  <div class="time-step">
+                    <div class="time-dot yellow">4</div>
+                    <h4>Division Rollout</h4>
+                    <p>Scale across 155 stores.</p>
+                  </div>
+                  <div class="time-step">
+                    <div class="time-dot purple">5</div>
+                    <h4>Continuous Improvement</h4>
+                    <p>Optimize and drive long-term performance.</p>
+                  </div>
+                </div>
+
+                <div class="card" style="margin-top:20px;">
+                  <h3 style="text-align:center;">What Makes F.R.I.E.N.D. Different</h3>
+                  <div class="grid two" style="margin-top:10px;">
+                    <p>✅ AI-assisted guidance in the flow of work</p>
+                    <p>✅ Built for retail operations</p>
+                    <p>✅ Role-based insights for every leader</p>
+                    <p>✅ Scalable across the entire division</p>
+                    <p>✅ Connected data for faster decisions</p>
+                    <p>✅ Designed to develop great people</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel">
+              <div class="panel-title">Expected Outcomes</div>
+              <div class="panel-body grid">
+
+                <div class="card">
+                  <div class="card-row">
+                    <div class="card-icon green">📈</div>
+                    <div>
+                      <h3>Improved Performance</h3>
+                      <p>Higher execution rates across key operations.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card">
+                  <div class="card-row">
+                    <div class="card-icon">⏱</div>
+                    <div>
+                      <h3>Time Savings</h3>
+                      <p>Leaders spend more time leading and less time searching.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card">
+                  <div class="card-row">
+                    <div class="card-icon yellow">$</div>
+                    <div>
+                      <h3>Cost Savings</h3>
+                      <p>Reduced shrink, better labor efficiency, and fewer missed opportunities.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card">
+                  <div class="card-row">
+                    <div class="card-icon red">👥</div>
+                    <div>
+                      <h3>Stronger Culture</h3>
+                      <p>Developed associates and engaged teams.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card">
+                  <div class="card-row">
+                    <div class="card-icon purple">📊</div>
+                    <div>
+                      <h3>Sustainable Growth</h3>
+                      <p>Data-driven improvements that compound over time.</p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="gold-callout">
+            <div class="gold-star">★</div>
+            <div>
+              <h3>F.R.I.E.N.D. is more than a tool — it’s a strategic advantage for the King Soopers Division.</h3>
+              <p>
+                By integrating intelligence, people, and process, we create the foundation for stronger stores,
+                stronger leaders, and stronger results.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </article>
+
+      <!-- CODE BLOCK 2 WILL START HERE WITH PRE-PILOT, PRE-PILOT COST, AND PILOT PROGRAM -->
