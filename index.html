@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>F.R.I.E.N.D. Proposal</title>
+
+  <style>
+    :root {
+      --blue: #0057a8;
+      --dark-blue: #002f6c;
+      --red: #e31828;
+      --yellow: #ffc20e;
+      --white: #ffffff;
+      --light: #f4f7fb;
+      --gray: #5f6b7a;
+      --dark: #1f2937;
+      --green: #18a558;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--blue), var(--dark-blue));
+      color: white;
+      text-align: center;
+      padding: 55px 20px 45px;
+    }
+
+    .logo-box {
+      background: white;
+      color: var(--blue);
+      display: inline-block;
+      padding: 10px 22px;
+      border-radius: 8px;
+      font-weight: 900;
+      margin-bottom: 25px;
+      letter-spacing: 1px;
+    }
+
+    header h1 {
+      font-size: 4rem;
+      letter-spacing: 10px;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.4rem;
+      max-width: 850px;
+      margin: auto;
+    }
+
+    nav {
+      background: var(--red);
+      padding: 15px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 8px 14px;
+      display: inline-block;
+      font-size: 1rem;
+    }
+
+    nav a:hover {
+      color: var(--yellow);
+    }
+
+    .hero {
+      background: white;
+      padding: 70px 20px;
+      text-align: center;
+    }
+
+    .hero h2 {
+      color: var(--dark-blue);
+      font-size: 3.2rem;
+      margin-bottom: 25px;
+    }
+
+    .hero p {
+      max-width: 950px;
+      margin: auto;
+      font-size: 1.35rem;
+      color: var(--dark-blue);
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 30px;
+      background: var(--yellow);
+      color: var(--dark-blue);
+      padding: 16px 34px;
+      border-radius: 10px;
+      font-weight: 900;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .button:hover {
+      background: #ffd452;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      color: var(--dark-blue);
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: var(--gray);
+      max-width: 850px;
+      margin: 0 auto 40px;
+      font-size: 1.1rem;
+    }
+
+    .dashboard-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 22px;
+      margin-top: 35px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 16px;
+      padding: 25px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      border-top: 6px solid var(--blue);
+    }
+
+    .card.red {
+      border-top-color: var(--red);
+    }
+
+    .card.yellow {
+      border-top-color: var(--yellow);
+    }
+
+    .card.green {
+      border-top-color: var(--green);
+    }
+
+    .card h3 {
+      color: var(--dark-blue);
+      margin-bottom: 10px;
+      font-size: 1.3rem;
+    }
+
+    .metric {
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--blue);
+      margin: 8px 0;
+    }
+
+    .metric-label {
+      color: var(--gray);
+      font-size: 0.95rem;
+    }
+
+    .panel {
+      background: white;
+      margin: 25px 0;
+      border-radius: 14px;
+      box-shadow: 0 8px 22px rgba(0,0,0,0.08);
+      overflow: hidden;
+    }
+
+    .panel summary {
+      background: var(--dark-blue);
+      color: white;
+      padding: 20px;
+      cursor: pointer;
+      font-size: 1.25rem;
+      font-weight: bold;
+    }
+
+    .panel-content {
+      padding: 25px;
+    }
+
+    .panel-content h4 {
+      color: var(--blue);
+      margin-top: 20px;
+      margin-bottom: 8px;
+      font-size: 1.15rem;
+    }
+
+    .panel-content ul {
+      margin-left: 22px;
+      margin-bottom: 18px;
+    }
+
+    .panel-content li {
+      margin-bottom: 8px;
+    }
+
+    .chart-box {
+      background: #eef4fb;
+      border-radius: 14px;
+      padding: 22px;
+      margin: 25px 0;
+    }
+
+    .bar {
+      background: #d8e6f5;
+      border-radius: 20px;
+      margin: 14px 0;
+      overflow: hidden;
+    }
+
+    .bar span {
+      display: block;
+      padding: 10px;
+      color: white;
+      font-weight: bold;
+      background: var(--blue);
+      border-radius: 20px;
+    }
+
+    .bar.red span {
+      background: var(--red);
+    }
+
+    .bar.yellow span {
+      background: var(--yellow);
+      color: var(--dark-blue);
+    }
+
+    .bar.green span {
+      background: var(--green);
+    }
+
+    .timeline {
+      border-left: 5px solid var(--blue);
+      padding-left: 25px;
+      margin-top: 25px;
+    }
+
+    .timeline-item {
+      background: white;
+      margin-bottom: 22px;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+    }
+
+    .timeline-item h3 {
+      color: var(--dark-blue);
+      margin-bottom: 8px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 25px 0;
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    th {
+      background: var(--dark-blue);
+      color: white;
+      padding: 14px;
+      text-align: left;
+    }
+
+    td {
+      padding: 14px;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    tr:nth-child(even) {
+      background: #f8fafc;
+    }
+
+    footer {
+      background: var(--dark-blue);
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+      margin-top: 50px;
+    }
+
+    footer a {
+      color: var(--yellow);
+    }
+
+    @media (max-width: 700px) {
+      header h1 {
+        font-size: 2.6rem;
+        letter-spacing: 5px;
+      }
+
+      .hero h2 {
+        font-size: 2.3rem;
+      }
+
+      nav a {
+        font-size: 0.95rem;
+        margin: 6px 9px;
+      }
+
+      section {
+        padding: 45px 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo-box">KING SOOPERS DIVISION</div>
+    <h1>F.R.I.E.N.D.</h1>
+    <p>Full Retail Integration Engaged Network Dynamics</p>
+  </header>
+
+  <nav>
+    <a href="#dashboard">Dashboard</a>
+    <a href="#prepilot">Pre-Pilot</a>
+    <a href="#cost">Pre-Pilot Cost</a>
+    <a href="#pilot">Pilot Program</a>
+    <a href="#regional">Regional Rollout</a>
+    <a href="#division">Division Rollout</a>
+    <a href="#roi">ROI</a>
+    <a href="#inaction">Inaction</a>
+    <a href="#redteam">Red Team</a>
+    <a href="#rollout">10-Point Rollout</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <div class="hero">
+    <h2>Executive Proposal</h2>
+    <p>
+      F.R.I.E.N.D. is a next-generation operational intelligence platform designed
+      to connect associates, department leaders, store leaders, district leaders,
+      and division leadership through one unified ecosystem of real-time metrics,
+      training, execution, accountability, and AI-driven insights.
+    </p>
+    <a class="button" href="#dashboard">View Executive Dashboard</a>
+  </div>
+
+  <section id="dashboard">
+    <h2 class="section-title">Executive Dashboard</h2>
+    <p class="section-subtitle">
+      A high-level view of the proposed F.R.I.E.N.D. platform, showing projected
+      operational impact across execution, labor efficiency, training, shrink,
+      accountability, and leadership visibility.
+    </p>
+
+    <div class="dashboard-grid">
+      <div class="card">
+        <h3>Projected Labor Efficiency</h3>
+        <div class="metric">8% - 14%</div>
+        <p class="metric-label">Potential improvement through task alignment, execution visibility, and smarter prioritization.</p>
+      </div>
+
+      <div class="card red">
+        <h3>Shrink Reduction Target</h3>
+        <div class="metric">3% - 7%</div>
+        <p class="metric-label">Projected improvement through better production, thaw-and-sell visibility, and food safety tracking.</p>
+      </div>
+
+      <div class="card yellow">
+        <h3>Training Acceleration</h3>
+        <div class="metric">20% - 35%</div>
+        <p class="metric-label">Potential reduction in ramp-up time for new associates through guided workflows and department-specific support.</p>
+      </div>
+
+      <div class="card green">
+        <h3>Pilot Scope</h3>
+        <div class="metric">3 Stores</div>
+        <p class="metric-label">Low-volume, medium-volume, and high-volume store test environments.</p>
+      </div>
+    </div>
+
+    <div class="chart-box">
+      <h3>Projected Impact Areas</h3>
+
+      <div class="bar">
+        <span style="width: 88%;">Operational Visibility — 88%</span>
+      </div>
+
+      <div class="bar green">
+        <span style="width: 82%;">Task Execution — 82%</span>
+      </div>
+
+      <div class="bar yellow">
+        <span style="width: 76%;">Training Consistency — 76%</span>
+      </div>
+
+      <div class="bar red">
+        <span style="width: 68%;">Shrink Control — 68%</span>
+      </div>
+    </div>
+  </section>
