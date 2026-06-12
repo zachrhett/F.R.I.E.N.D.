@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>F.R.I.E.N.D. Executive Proposal</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:#f4f7fb;
+  color:#10213f;
+}
+
+header{
+  background:linear-gradient(135deg,#003f8f,#005bbb);
+  color:white;
+  padding:34px 18px;
+  text-align:center;
+  border-bottom:8px solid #f7c600;
+}
+
+.logo{
+  display:inline-block;
+  background:white;
+  color:#d71920;
+  font-size:23px;
+  font-weight:900;
+  padding:10px 20px;
+  border-radius:14px;
+  border:4px solid #f7c600;
+  margin-bottom:16px;
+}
+
+header h1{
+  font-size:42px;
+  letter-spacing:3px;
+}
+
+header p{
+  margin-top:8px;
+  font-size:18px;
+  font-weight:700;
+}
+
+main{
+  max-width:1200px;
+  margin:auto;
+  padding:24px;
+}
+
+.card{
+  background:white;
+  border-radius:20px;
+  padding:24px;
+  margin-bottom:24px;
+  box-shadow:0 8px 26px rgba(0,0,0,.12);
+  border-left:8px solid #005bbb;
+}
+
+.card h2{
+  color:#003f8f;
+  margin-bottom:12px;
+  font-size:28px;
+}
+
+.card p{
+  font-size:17px;
+  line-height:1.55;
+}
+
+.dashboard{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:16px;
+  margin-top:20px;
+}
+
+.metric{
+  background:#eef5ff;
+  border:2px solid #c9ddff;
+  border-radius:18px;
+  padding:20px;
+  text-align:center;
+}
+
+.metric strong{
+  display:block;
+  font-size:34px;
+  color:#005bbb;
+}
+
+.metric span{
+  font-weight:800;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:18px;
+}
+
+.section-card{
+  border-radius:18px;
+  padding:20px;
+  background:#f8fbff;
+  border:2px solid #d9e7fb;
+}
+
+.section-card h3{
+  color:#003f8f;
+  margin-bottom:10px;
+}
+
+.section-card ul{
+  padding-left:20px;
+  line-height:1.6;
+}
+
+button{
+  width:100%;
+  margin-top:14px;
+  padding:13px;
+  border:none;
+  border-radius:12px;
+  background:#005bbb;
+  color:white;
+  font-weight:900;
+  cursor:pointer;
+}
+
+button:hover{background:#003f8f}
+
+.hidden{
+  display:none;
+  margin-top:14px;
+  padding:14px;
+  background:white;
+  border-radius:12px;
+  border-left:5px solid #f7c600;
+}
+
+.roi{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:14px;
+  margin-top:18px;
+}
+
+.roi div{
+  background:#003f8f;
+  color:white;
+  padding:18px;
+  border-radius:16px;
+  text-align:center;
+  font-weight:800;
+}
+
+.red{background:#d71920!important}
+.yellow{background:#f7c600!important;color:#10213f!important}
+
+footer{
+  text-align:center;
+  padding:24px;
+  font-weight:800;
+  color:#53627a;
+}
+
+@media(max-width:600px){
+  header h1{font-size:32px}
+  main{padding:14px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">KING SOOPERS</div>
+  <h1>F.R.I.E.N.D.</h1>
+  <p>Full Retail Integration Engaged Network Dynamics</p>
+  <p>Executive Proposal Website</p>
+</header>
+
+<main>
+
+<section class="card">
+  <h2>Executive Summary</h2>
+  <p>
+    F.R.I.E.N.D. is a proposed integrated retail execution platform designed to connect
+    store leadership, department leaders, and associates through one unified operational
+    system. The goal is simple: make work clearer, faster, more measurable, and easier
+    to execute across the King Soopers division.
+  </p>
+
+  <div class="dashboard">
+    <div class="metric"><strong>3</strong><span>Pilot Stores</span></div>
+    <div class="metric"><strong>3–6</strong><span>Month Pilot</span></div>
+    <div class="metric"><strong>20–30</strong><span>Regional Rollout</span></div>
+    <div class="metric"><strong>155</strong><span>Division Store Potential</span></div>
+  </div>
+</section>
+
+<section class="card">
+  <h2>Proposal Sections</h2>
+
+  <div class="grid">
+
+    <div class="section-card">
+      <h3>1. Pre-Pilot</h3>
+      <ul>
+        <li>Define scope</li>
+        <li>Select pilot stores</li>
+        <li>Map operational gaps</li>
+      </ul>
+      <button onclick="toggle('prepilot')">Open Details</button>
+      <div id="prepilot" class="hidden">
+        The pre-pilot phase prepares the organization before launch. This includes
+        choosing low, medium, and high-volume stores, identifying current pain points,
+        defining success metrics, and aligning store and division leadership.
+      </div>
+    </div>
+
+    <div class="section-card">
+      <h3>2. Pre-Pilot Cost</h3>
+      <ul>
+        <li>Device readiness</li>
+        <li>Training labor</li>
+        <li>System setup</li>
+      </ul>
+      <button onclick="toggle('cost')">Open Details</button>
+      <div id="cost" class="hidden">
+        Cost planning should include technology review, Zebra/TC-52 readiness,
+        training hours, leadership preparation, reporting setup, and support during
+        implementation.
+      </div>
+    </div>
+
+    <div class="section-card">
+      <h3>3. Pilot Program</h3>
+      <ul>
+        <li>3 stores</li>
+        <li>3–6 months</li>
+        <li>Data collection</li>
+      </ul>
+      <button onclick="toggle('pilot')">Open Details</button>
+      <div id="pilot" class="hidden">
+        The pilot tests F.R.I.E.N.D. across three store environments: low volume,
+        medium volume, and high volume. The pilot measures execution, adoption,
+        labor impact, shrink impact, and leadership usefulness.
+      </div>
+    </div>
+
+    <div class="section-card">
+      <h3>4. Regional Rollout</h3>
+      <ul>
+        <li>20–30 stores</li>
+        <li>Scale support</li>
+        <li>Regional learning</li>
+      </ul>
+      <button onclick="toggle('regional')">Open Details</button>
+      <div id="regional" class="hidden">
+        After the pilot, the program expands regionally. This stage validates whether
+        the system works across multiple store types and leadership styles before
+        division-wide adoption.
+      </div>
+    </div>
+
+    <div class="section-card">
+      <h3>5. Division Rollout</h3>
+      <ul>
+        <li>All-store deployment</li>
+        <li>Training cadence</li>
+        <li>Leadership dashboard</li>
+      </ul>
+      <button onclick="toggle('division')">Open Details</button>
+      <div id="division" class="hidden">
+        The division rollout scales the system across the King Soopers division using
+        lessons from the pilot and regional rollout. The goal is consistent execution,
+        measurable accountability, and improved visibility.
+      </div>
+    </div>
+
+    <div class="section-card">
+      <h3>6. ROI Analysis</h3>
+      <ul>
+        <li>Labor efficiency</li>
+        <li>Shrink reduction</li>
+        <li>Execution consistency</li>
+      </ul>
+      <button onclick="toggle('roi')">Open Details</button>
+      <div id="roi" class="hidden">
+        ROI should be measured through labor optimization, shrink reduction, faster
+        training, improved task completion, stronger compliance, and better department
+        execution.
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="card">
+  <h2>ROI Dashboard</h2>
+  <p>
+    F.R.I.E.N.D. should be judged by measurable operational improvement, not theory.
+  </p>
+
+  <div class="roi">
+    <div>Labor Clarity</div>
+    <div class="red">Shrink Control</div>
+    <div class="yellow">Training Speed</div>
+    <div>Task Execution</div>
+    <div class="red">Food Safety</div>
+    <div class="yellow">Leadership Visibility</div>
+  </div>
+</section>
+
+<section class="card">
+  <h2>Cost of Inaction</h2>
+  <p>
+    The hidden cost of inaction is continued fragmentation: disconnected communication,
+    inconsistent task execution, training gaps, missed opportunities, preventable shrink,
+    and leadership blind spots across stores and departments.
+  </p>
+</section>
+
+<section class="card">
+  <h2>Red Team Review</h2>
+  <p>
+    A successful rollout must address risk early: adoption resistance, unclear ownership,
+    technology friction, training fatigue, and over-complication. F.R.I.E.N.D. should be
+    tested, challenged, simplified, and improved before full division rollout.
+  </p>
+</section>
+
+<section class="card">
+  <h2>10-Point Rollout Plan</h2>
+  <div class="grid">
+    <div class="section-card">1. Define ownership</div>
+    <div class="section-card">2. Select pilot stores</div>
+    <div class="section-card">3. Prepare devices</div>
+    <div class="section-card">4. Train leaders</div>
+    <div class="section-card">5. Launch pilot</div>
+    <div class="section-card">6. Collect data</div>
+    <div class="section-card">7. Refine process</div>
+    <div class="section-card">8. Expand regionally</div>
+    <div class="section-card">9. Prepare division rollout</div>
+    <div class="section-card">10. Improve continuously</div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+Prepared by Zachariah Rhett | F.R.I.E.N.D. Executive Proposal
+</footer>
+
+<script>
+function toggle(id){
+  const box=document.getElementById(id);
+  box.style.display = box.style.display === "block" ? "none" : "block";
+}
+</script>
+
+</body>
+</html>
